@@ -38,7 +38,7 @@ namespace ConsoleApp
             //Приводим число типа decimal к типу int.
             //
             Console.WriteLine((int)dec);
-            Console.Readkey();
+            Console.ReadKey();
         }
     }
 }
