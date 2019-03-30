@@ -12,6 +12,7 @@ namespace ConsoleApp
         {
             Task4();
             Task5();
+            Task6();
         }
         static void Task4()
         {
@@ -39,6 +40,14 @@ namespace ConsoleApp
             //
             Console.WriteLine((int)dec);
             Console.ReadKey();
+        }
+        static void Task6()
+        {
+            int num1 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+            int num3 = int.Parse(Console.ReadLine());
+            double average = (double)(num1 + num2 + num3) / 3;
+            Console.WriteLine(average);
         }
     }
 }
