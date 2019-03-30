@@ -11,6 +11,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             Task1();
+            Task2();
         }
         static void Task1()
         {
@@ -20,7 +21,13 @@ namespace ConsoleApp
             int myVar = 4;
             int myVariable = 5;
         }
-
+        static void Task2()
+        {
+            const decimal Pi = 3.141592653m;
+            const decimal E = 2.7182818284590452m;
+            Console.WriteLine($"число Эйлера {E} число Pi {Pi}");
+            Console.ReadKey();
+        }
 
 
 
