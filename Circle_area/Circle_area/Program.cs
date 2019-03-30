@@ -10,6 +10,15 @@ namespace Circle_area
     {
         static void Main(string[] args)
         {
+            string radiusString = Console.ReadLine();
+            int.TryParse(radiusString, out int radius);
+            Console.WriteLine($"The square of the round {Program.PerformCalculation(15)}");
+        }
+        public static decimal PerformCalculation(int r)
+        {
+            const decimal Pi = 3.14m;
+            decimal square = Pi * r * r;
+            return square;
         }
     }
 }
