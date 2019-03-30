@@ -16,6 +16,11 @@ namespace ConsoleApp2
             int myVar = 4;
             int myVariable = 5;
 
+            const decimal Pi = 3.141592653m;
+            const decimal E = 2.7182818284590452m;
+            Console.WriteLine($"число Эйлера {E} число Pi {Pi}");
+            Console.ReadKey();
+
 
 
 
