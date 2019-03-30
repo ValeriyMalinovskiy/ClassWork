@@ -10,9 +10,11 @@ namespace Circle_area
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите радиус");
             string radiusString = Console.ReadLine();
             int.TryParse(radiusString, out int radius);
-            Console.WriteLine($"The square of the round {Program.PerformCalculation(15)}");
+            Console.WriteLine($"The square of the round {Program.PerformCalculation(radius)}");
+            Console.ReadKey();
         }
         public static decimal PerformCalculation(int r)
         {
