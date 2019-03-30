@@ -11,7 +11,7 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             int uberflu = 1;
-            int Identifier = 2;
+            int _Identifier = 2;
             int \u006fIdentifier = 3;
             int myVar = 4;
             int myVariable = 5;
@@ -21,6 +21,14 @@ namespace ConsoleApp2
             Console.WriteLine($"число Эйлера {E} число Pi {Pi}");
             Console.ReadKey();
 
+            string firstStr = "\nмоя строка1";
+            string secodStr = "\tмоя строка2";
+            string thirdStr = "\aмоя строка3";
+
+            Console.WriteLine(firstStr);
+            Console.WriteLine(secodStr);
+            Console.WriteLine(thirdStr);
+            Console.ReadKey();
 
 
 
