@@ -13,7 +13,8 @@ namespace ConsoleApp
             //Task4();
             //Task5();
             //Task6();
-            Task7();
+            //Task7();
+            Task8();
         }
         static void Task4()
         {
@@ -35,7 +36,6 @@ namespace ConsoleApp
             //
             Console.WriteLine((short)i1);
             Console.WriteLine((short)i2);
-
             //
             //Приводим число типа decimal к типу int.
             //
@@ -55,6 +55,18 @@ namespace ConsoleApp
             const double Pi = 3.14;
             double r = double.Parse(Console.ReadLine());
             Console.WriteLine("area = " + Pi * Math.Pow(r, 2));
+            Console.ReadKey();
+        }
+        static void Task8()
+        {
+            const double Pi = 3.14;
+            double r = double.Parse(Console.ReadLine());
+            double h = double.Parse(Console.ReadLine());
+            //S=2(PiR^2)+2PiR*h=2PiR(R+h)
+            //V = PiR ^ 2 * h
+            double s = 2 * Pi * r*(r + h);
+            double v = Pi * Math.Pow(r,2) * h;
+            Console.WriteLine($"S = {s}\nV = {v}");
             Console.ReadKey();
         }
     }
