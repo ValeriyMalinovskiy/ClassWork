@@ -10,9 +10,10 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Task4();
-            Task5();
-            Task6();
+            //Task4();
+            //Task5();
+            //Task6();
+            Task7();
         }
         static void Task4()
         {
@@ -48,6 +49,13 @@ namespace ConsoleApp
             int num3 = int.Parse(Console.ReadLine());
             double average = (double)(num1 + num2 + num3) / 3;
             Console.WriteLine(average);
+        }
+        static void Task7()
+        {
+            const double Pi = 3.14;
+            double r = double.Parse(Console.ReadLine());
+            Console.WriteLine("area = " + Pi * Math.Pow(r, 2));
+            Console.ReadKey();
         }
     }
 }
