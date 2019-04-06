@@ -14,7 +14,9 @@ namespace ConsoleApp
 
             //Task2();
 
-            Task3();
+            //Task3();
+
+            Task4();
 
             Console.ReadKey();
         }
@@ -46,6 +48,15 @@ namespace ConsoleApp
             isSecondCond = (inputNum % 2 == 0);
             if (isFirstCond & isSecondCond) Console.WriteLine("True");
             else Console.WriteLine("False");
+        }
+
+        static void Task4()
+        {
+            int x = 10;
+            int y = 12;
+            int z = 3;
+            x += y - x++ * z;//x*z (30) x=11 then y-(30) then x=11+(-18) . x=-8.
+            Console.WriteLine($"x={x}");
         }
     }
 }
