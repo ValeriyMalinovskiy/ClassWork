@@ -10,7 +10,9 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Task1();
+            //Task1();
+
+            Task2();
 
             Console.ReadKey();
         }
@@ -23,6 +25,14 @@ namespace ConsoleApp
             //
             int hoursPassed = secondsPassed / 3600;
             Console.WriteLine($"Since midnight {hoursPassed} hours passed");
+        }
+
+        static void Task2()
+        {
+            int numA = Int32.Parse(Console.ReadLine());
+            int numB = Int32.Parse(Console.ReadLine());
+            int numC = Int32.Parse(Console.ReadLine());
+            Console.WriteLine(((numA < numB) && (numB < numC)) ? "True" : "False");
         }
     }
 }
