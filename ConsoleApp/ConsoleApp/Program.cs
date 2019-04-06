@@ -22,7 +22,7 @@ namespace ConsoleApp
             short num2 = short.Parse(Console.ReadLine());
             Console.WriteLine($"{num1}+{num2}={Program.Sum(num1, num2)}");
         }
-        static int Sum(int x,int y)
+        static int Sum(int x, int y)
         {
             return x + y;
         }
