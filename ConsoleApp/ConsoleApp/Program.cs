@@ -36,7 +36,6 @@ namespace ConsoleApp
             string firstStr = "\nмоя строка1";
             string secodStr = "\tмоя строка2";
             string thirdStr = "\aмоя строка3";
-
             Console.WriteLine(firstStr);
             Console.WriteLine(secodStr);
             Console.WriteLine(thirdStr);
