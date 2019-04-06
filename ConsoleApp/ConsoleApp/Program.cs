@@ -11,7 +11,9 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             Task1();
+            
             Task2();
+            
             Task3();
         }
         static void Task1()
@@ -34,14 +36,10 @@ namespace ConsoleApp
             string firstStr = "\nмоя строка1";
             string secodStr = "\tмоя строка2";
             string thirdStr = "\aмоя строка3";
-
             Console.WriteLine(firstStr);
             Console.WriteLine(secodStr);
             Console.WriteLine(thirdStr);
             Console.ReadKey();
         }
-
-
-
     }
 }
