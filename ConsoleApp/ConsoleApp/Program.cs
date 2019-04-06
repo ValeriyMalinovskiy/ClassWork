@@ -18,13 +18,13 @@ namespace ConsoleApp
 
             //Task4();
 
-            //Task5();
+            Task5();
 
             //Task6();
 
-            Task7();
+            //Task7();
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
 
         static void Task1()
@@ -67,38 +67,56 @@ namespace ConsoleApp
 
         static void Task5()
         {
-            Console.WriteLine("Type two numbers");
-            double operand1 = Double.Parse(Console.ReadLine());
-            double operand2 = Double.Parse(Console.ReadLine());
-            Console.WriteLine("Choose the operation (+,-,*,/)");
-            switch (Console.ReadKey(true).Key)
+            ConsoleKey lastPressedKey;
+            do
             {
-                case ConsoleKey.Add:
+                Console.WriteLine("Type two numbers");
+                try
+                {
+                    double operand1 = Double.Parse(Console.ReadLine());
+                    double operand2 = Double.Parse(Console.ReadLine());
+                    Console.WriteLine("Choose the operation (+,-,*,/)");
+                    lastPressedKey = Console.ReadKey(true).Key;
+                    switch (lastPressedKey)
                     {
-                        Console.WriteLine(operand1 + operand2);
-                    }
-                    break;
-                case ConsoleKey.Subtract:
-                    {
-                        Console.WriteLine(operand1 - operand2);
-                    }
-                    break;
-                case ConsoleKey.Divide:
-                    {
-                        if (operand2 == 0)
-                        {
-                            Console.WriteLine("Can't divide by zero");
+                        case ConsoleKey.Add:
+                            {
+                                Console.WriteLine(operand1 + operand2);
+                            }
                             break;
-                        }
-                        Console.WriteLine(operand1 / operand2);
+                        case ConsoleKey.Subtract:
+                            {
+                                Console.WriteLine(operand1 - operand2);
+                            }
+                            break;
+                        case ConsoleKey.Divide:
+                            {
+                                if (operand2 == 0)
+                                {
+                                    Console.WriteLine("Can't divide by zero");
+                                    break;
+                                }
+                                Console.WriteLine(operand1 / operand2);
+                            }
+                            break;
+                        case ConsoleKey.Multiply:
+                            {
+                                Console.WriteLine(operand1 * operand2);
+                            }
+                            break;
                     }
-                    break;
-                case ConsoleKey.Multiply:
-                    {
-                        Console.WriteLine(operand1 * operand2);
-                    }
-                    break;
+
+                }
+                catch
+                {
+                Console.WriteLine("incorrect input");
+                }
+                Console.WriteLine("Press any key to continue");
+                Console.WriteLine("Press Esc to exit");
+                lastPressedKey = Console.ReadKey(true).Key;
+                Console.Clear();
             }
+            while (lastPressedKey != ConsoleKey.Escape);
         }
 
         static void Task6()
