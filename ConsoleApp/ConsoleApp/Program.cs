@@ -18,11 +18,13 @@ namespace ConsoleApp
 
             //Task4();
 
-            Task5();
+            //Task5();
 
             //Task6();
 
             //Task7();
+
+            Task8();
 
             //Console.ReadKey();
         }
@@ -204,5 +206,18 @@ namespace ConsoleApp
             temperature,
             visibility
         };      
+
+        static void Task8()
+        {
+            int workExper = Int32.Parse(Console.ReadLine());
+            int bounty = 0;
+            if (workExper < 5) bounty = 10;
+            else if (workExper <= 5 && workExper < 10) bounty = 15;
+            else if (workExper <= 10 && workExper < 15) bounty = 25;
+            else if (workExper <= 15 && workExper < 20) bounty = 35;
+            else if (workExper <= 20 && workExper < 25) bounty = 35;
+            else if (workExper <= 25) bounty = 50;
+            Console.WriteLine($"Your bounty is {bounty} %");
+        }
     }
 }
