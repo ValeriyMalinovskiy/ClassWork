@@ -11,7 +11,9 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             Task1();
+            
             Task2();
+            
             Task3();
         }
         static void Task1()
@@ -40,8 +42,5 @@ namespace ConsoleApp
             Console.WriteLine(thirdStr);
             Console.ReadKey();
         }
-
-
-
     }
 }
