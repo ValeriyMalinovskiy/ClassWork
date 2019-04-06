@@ -20,7 +20,9 @@ namespace ConsoleApp
 
             //Task5();
 
-            Task6();
+            //Task6();
+
+            Task7();
 
             Console.ReadKey();
         }
@@ -109,5 +111,80 @@ namespace ConsoleApp
             else if (input<0||input>100) Console.WriteLine("Entered number is outside of any range");
         }
 
+        static void Task7()
+        {
+            string inputWord = Console.ReadLine();
+            switch (inputWord)
+            {
+                case "дождь":
+                    {
+                        Console.WriteLine(WeatherWords.rain);
+                    }
+                    break;
+                case "влажность":
+                    {
+                        Console.WriteLine(WeatherWords.humidity);
+                    }
+                    break;
+                case "туман":
+                    {
+                        Console.WriteLine(WeatherWords.fog);
+                    }
+                    break;
+                case "давление":
+                    {
+                        Console.WriteLine(WeatherWords.pressure);
+                    }
+                    break;
+                case "солнце":
+                    {
+                        Console.WriteLine(WeatherWords.sun);
+                    }
+                    break;
+                case "температура":
+                    {
+                        Console.WriteLine(WeatherWords.temperature);
+                    }
+                    break;
+                case "ветер":
+                    {
+                        Console.WriteLine(WeatherWords.wind);
+                    }
+                    break;
+                case "видимость":
+                    {
+                        Console.WriteLine(WeatherWords.visibility);
+                    }
+                    break;
+                case "облачно":
+                    {
+                        Console.WriteLine(WeatherWords.overcast);
+                    }
+                    break;
+                case "осадки":
+                    {
+                        Console.WriteLine(WeatherWords.percipation);
+                    }
+                    break;
+                default:
+                    {
+                        Console.WriteLine("The word does not exist in DB, sorry");
+                    }
+                    break;
+            }
+        }
+        enum WeatherWords
+        {
+            rain,
+            sun,
+            humidity,
+            percipation,
+            fog,
+            overcast,
+            wind,
+            pressure,
+            temperature,
+            visibility
+        };      
     }
 }
