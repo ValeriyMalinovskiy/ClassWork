@@ -16,7 +16,9 @@ namespace ConsoleApp
 
             //Task3();
 
-            Task4();
+            //Task4();
+
+            Task5();
 
             Console.ReadKey();
         }
@@ -57,6 +59,42 @@ namespace ConsoleApp
             int z = 3;
             x += y - x++ * z;//x*z (30) x=11 then y-(30) then x=11+(-18) . x=-8.
             Console.WriteLine($"x={x}");
+        }
+
+        static void Task5()
+        {
+            Console.WriteLine("Type two numbers");
+            double operand1 = Double.Parse(Console.ReadLine());
+            double operand2 = Double.Parse(Console.ReadLine());
+            Console.WriteLine("Choose the operation (+,-,*,/)");
+            switch (Console.ReadKey(true).Key)
+            {
+                case ConsoleKey.Add:
+                    {
+                        Console.WriteLine(operand1 + operand2);
+                    }
+                    break;
+                case ConsoleKey.Subtract:
+                    {
+                        Console.WriteLine(operand1 - operand2);
+                    }
+                    break;
+                case ConsoleKey.Divide:
+                    {
+                        if (operand2 == 0)
+                        {
+                            Console.WriteLine("Can't divide by zero");
+                            break;
+                        }
+                        Console.WriteLine(operand1 / operand2);
+                    }
+                    break;
+                case ConsoleKey.Multiply:
+                    {
+                        Console.WriteLine(operand1 * operand2);
+                    }
+                    break;
+            }
         }
     }
 }
