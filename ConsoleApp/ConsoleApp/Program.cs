@@ -18,7 +18,9 @@ namespace ConsoleApp
 
             //Task4();
 
-            Task5();
+            //Task5();
+
+            Task6();
 
             Console.ReadKey();
         }
@@ -96,5 +98,16 @@ namespace ConsoleApp
                     break;
             }
         }
+
+        static void Task6()
+        {
+            int input = Int32.Parse(Console.ReadLine());
+            if ((input >= 0) && (input <= 14)) Console.WriteLine("Entered number is within 0 and 14 range");
+            else if ((input >= 15) && (input <= 35)) Console.WriteLine("Entered number is within 15 and 35 range");
+            else if ((input >= 36) && (input <= 50)) Console.WriteLine("Entered number is within 36 and 50 range");
+            if ((input >= 50) && (input <= 100)) Console.WriteLine("Entered number is within 50 and 100 range");
+            else if (input<0||input>100) Console.WriteLine("Entered number is outside of any range");
+        }
+
     }
 }
