@@ -11,9 +11,13 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             //Task4();
+            
             //Task5();
+            
             //Task6();
+            
             //Task7();
+            
             Task8();
         }
         static void Task4()
@@ -32,12 +36,12 @@ namespace ConsoleApp
             int i2 = 84500;
             decimal dec = 7.98845m;
             //
-            //Приводим два числа типа int short.
+            //Cast two int-type numbers to short.
             //
             Console.WriteLine((short)i1);
             Console.WriteLine((short)i2);
             //
-            //Приводим число типа decimal к типу int.
+            //Cast decimal to int.
             //
             Console.WriteLine((int)dec);
             Console.ReadKey();
