@@ -24,11 +24,9 @@ namespace ConsoleApp
 
             //Task7();
 
-            //Task8();
+            Task8();
 
-            Task10();
-
-            Console.ReadKey();
+            //Console.ReadKey();
         }
 
         static void Task1()
@@ -220,18 +218,6 @@ namespace ConsoleApp
             else if (workExper <= 20 && workExper < 25) bounty = 35;
             else if (workExper <= 25) bounty = 50;
             Console.WriteLine($"Your bounty is {bounty} %");
-        }
-
-        static void Task10()
-        {
-            int input = Int32.Parse(Console.ReadLine());
-            int factorial=1;
-            while(input>0)
-            {
-            factorial*=input;
-                input--;
-            }
-            Console.WriteLine(factorial);
         }
     }
 }
