@@ -12,7 +12,9 @@ namespace ConsoleApp
         {
             //Task1();
 
-            Task2();
+            //Task2();
+
+            Task5();
 
             Console.ReadKey();
         }
@@ -28,7 +30,7 @@ namespace ConsoleApp
 
             for (int i = 0; i < myArr.Length; i++)
             {
-                myArr[i] = rnd.Next(-10,11);
+                myArr[i] = rnd.Next(-20,21);
                 if (myArr[i] > maxVal)
                     maxVal = myArr[i];
                 if (myArr[i] < minVal)
@@ -49,7 +51,8 @@ namespace ConsoleApp
         static void Task2()
         {
             int[] arr = Task1();
-            Console.WriteLine("Sample arr:"); //Print sample array.
+            Console.Clear();
+            Console.WriteLine("Sample array:"); //Print sample array.
             foreach (var item in arr)
             {
                 Console.Write(item + " ");
@@ -85,11 +88,37 @@ namespace ConsoleApp
             }
 
             Console.WriteLine();
-            Console.WriteLine("Included numbers");
+            Console.WriteLine("Non-duplicate array");
             foreach (var item in resultArr)
             {
                 Console.Write(item + " ");
             }
+        }
+
+        static void Task5()
+        {
+            int[] arr = Task1();
+            Console.Clear();
+            foreach (var item in arr)
+            {
+                Console.Write(item+" ");
+            }
+            Console.WriteLine();
+            arr = MyReverse(arr);
+            foreach (var item in arr)
+            {
+                Console.Write(item+" ");
+            }
+        }
+
+        static int[] MyReverse(int[] arr)
+        {
+            int[] reversedArr = new int[arr.Length];
+            for (int i = 0, j=arr.Length-1; i < arr.Length; i++, j--)
+            {
+                reversedArr[j] = arr[i];
+            }
+            return reversedArr;
         }
     }
 }
