@@ -22,7 +22,9 @@ namespace ConsoleApp
 
             //SubArray(GetArray(), 2,3 );
 
-            Task7();
+            //Task7();
+
+            Task8();
 
             Console.ReadKey();
         }
@@ -221,6 +223,43 @@ namespace ConsoleApp
                     increasedArr[i] = arr[i-1];
             }
             return increasedArr;
+        }
+
+        static int[,] GetTwoDimArray()
+        {
+            int rows = 4;
+            int colunms = 5;
+            int[,] arr = new int[rows,colunms];
+            Random rnd = new Random();
+            for (int i = 0; i < arr.Length/colunms; i++)
+            {
+                for (int j = 0; j < arr.Length/rows; j++)
+                {
+                    arr[i, j] = rnd.Next(0, 11);
+                    Console.Write(arr[i,j]+"\t");
+                }
+                Console.WriteLine();
+            }
+            return arr;
+        }
+
+        static void Task8()
+        {
+            int[,] arr = GetTwoDimArray();
+            int valueToSearch = int.Parse(Console.ReadLine());
+            int counter = 0;
+            Console.WriteLine();
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (arr[i,j]==valueToSearch)
+                    {
+                        counter++;
+                    }
+                }
+            }
+            Console.WriteLine($"Value {valueToSearch} is found {counter} times");
         }
     }
 }
