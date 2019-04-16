@@ -24,7 +24,9 @@ namespace ConsoleApp
 
             //Task7();
 
-            Task8();
+            //Task8();
+
+            Task9();
 
             Console.ReadKey();
         }
@@ -81,7 +83,7 @@ namespace ConsoleApp
             {
                 for (int j = 0; j < i; j++) //j<i - to search only among previously included numbers
                 {
-                    if (arr[i] == arr[j]) 
+                    if (arr[i] == arr[j])
                         isDuplicated = true;
                 }
                 if (!isDuplicated)
@@ -117,14 +119,14 @@ namespace ConsoleApp
             arr = MyReverse(arr);
             foreach (var item in arr)
             {
-                Console.Write(item+" ");
+                Console.Write(item + " ");
             }
         }
 
         static int[] MyReverse(int[] arr)
         {
             int[] reversedArr = new int[arr.Length];
-            for (int i = 0, j=arr.Length-1; i < arr.Length; i++, j--)
+            for (int i = 0, j = arr.Length - 1; i < arr.Length; i++, j--)
             {
                 reversedArr[j] = arr[i];
             }
@@ -141,7 +143,7 @@ namespace ConsoleApp
             for (int i = 0; i < arr.Length; i++)
             {
                 if ((arr[i] > minVal && arr[i] < maxVal))
-                    Console.Write(i+1 + " ");
+                    Console.Write(i + 1 + " ");
             }
         }
 
@@ -160,7 +162,7 @@ namespace ConsoleApp
             foreach (var item in arr)
             {
                 if (item > average)
-                    Console.Write(item+" ");
+                    Console.Write(item + " ");
             }
         }
 
@@ -169,9 +171,9 @@ namespace ConsoleApp
             int[] arr = array;
             int[] modifiedArr = new int[count];
             Console.WriteLine();
-            for (int i = index, j=0; j < modifiedArr.Length; i++,j++)
+            for (int i = index, j = 0; j < modifiedArr.Length; i++, j++)
             {
-                if(j<array.Length-index)
+                if (j < array.Length - index)
                 {
                     modifiedArr[j] = arr[i];
                 }
@@ -184,7 +186,7 @@ namespace ConsoleApp
             Console.WriteLine("Modified array:");
             foreach (var item in modifiedArr)
             {
-                Console.Write(item+ " ");
+                Console.Write(item + " ");
             }
             return modifiedArr;
         }
@@ -193,19 +195,19 @@ namespace ConsoleApp
         {
             int[] arr = GetArray();
             //int[] increasedArr = ArrayIncrementor(arr);
-            int[] increasedArr = ArrayIncrementor(arr,8);
+            int[] increasedArr = ArrayIncrementor(arr, 8);
             Console.WriteLine();
             Console.WriteLine("Increased array:");
             foreach (var item in increasedArr)
             {
-                Console.Write(item+" ");
+                Console.Write(item + " ");
             }
         }
 
-        static int[] ArrayIncrementor (int[] arr)
+        static int[] ArrayIncrementor(int[] arr)
         {
             int[] increasedArr = new int[arr.Length + 1];
-            for (int i = 0; i < increasedArr.Length-1; i++)
+            for (int i = 0; i < increasedArr.Length - 1; i++)
             {
                 increasedArr[i] = arr[i];
             }
@@ -220,7 +222,7 @@ namespace ConsoleApp
                 if (i == 0)
                     increasedArr[i] = value;
                 else
-                    increasedArr[i] = arr[i-1];
+                    increasedArr[i] = arr[i - 1];
             }
             return increasedArr;
         }
@@ -229,14 +231,14 @@ namespace ConsoleApp
         {
             int rows = 4;
             int colunms = 5;
-            int[,] arr = new int[rows,colunms];
+            int[,] arr = new int[rows, colunms];
             Random rnd = new Random();
-            for (int i = 0; i < arr.Length/colunms; i++)
+            for (int i = 0; i < arr.Length / colunms; i++)
             {
-                for (int j = 0; j < arr.Length/rows; j++)
+                for (int j = 0; j < arr.Length / rows; j++)
                 {
                     arr[i, j] = rnd.Next(0, 11);
-                    Console.Write(arr[i,j]+"\t");
+                    Console.Write(arr[i, j] + "\t");
                 }
                 Console.WriteLine();
             }
@@ -253,13 +255,46 @@ namespace ConsoleApp
             {
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    if (arr[i,j]==valueToSearch)
+                    if (arr[i, j] == valueToSearch)
                     {
                         counter++;
                     }
                 }
             }
             Console.WriteLine($"Value {valueToSearch} is found {counter} times");
+        }
+
+        static void Task9()
+        {
+            int[,] arr = GetTwoDimArray();
+            Console.WriteLine("Enter the first row number to swap");
+            int swapRow1 = int.Parse(Console.ReadLine())-1;
+            Console.WriteLine("Enter the second row number to swap");
+            int swapRow2 = int.Parse(Console.ReadLine())-1;
+            int tempValue = 0;
+            for (int j = 0; j < arr.GetLength(1); j++) // Columns
+            {
+                for (int i = 0; i < arr.GetLength(0); i++) // Rows
+                {
+                    if (i==swapRow1)
+                    {
+                        tempValue = arr[i, j];
+                        arr[swapRow1, j] = arr[swapRow2,j];
+                    }
+                    else if(i==swapRow2)
+                    {
+                        arr[swapRow2, j] = tempValue;
+                    }
+                }
+            }
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write(arr[i,j]+ "\t");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
