@@ -20,7 +20,9 @@ namespace ConsoleApp
 
             //Task5();
 
-            SubArray(GetArray(), 2,3 );
+            //SubArray(GetArray(), 2,3 );
+
+            Task7();
 
             Console.ReadKey();
         }
@@ -183,6 +185,42 @@ namespace ConsoleApp
                 Console.Write(item+ " ");
             }
             return modifiedArr;
+        }
+
+        static void Task7()
+        {
+            int[] arr = GetArray();
+            //int[] increasedArr = ArrayIncrementor(arr);
+            int[] increasedArr = ArrayIncrementor(arr,8);
+            Console.WriteLine();
+            Console.WriteLine("Increased array:");
+            foreach (var item in increasedArr)
+            {
+                Console.Write(item+" ");
+            }
+        }
+
+        static int[] ArrayIncrementor (int[] arr)
+        {
+            int[] increasedArr = new int[arr.Length + 1];
+            for (int i = 0; i < increasedArr.Length-1; i++)
+            {
+                increasedArr[i] = arr[i];
+            }
+            return increasedArr;
+        }
+
+        static int[] ArrayIncrementor(int[] arr, int value)
+        {
+            int[] increasedArr = new int[arr.Length + 1];
+            for (int i = 0; i < increasedArr.Length; i++)
+            {
+                if (i == 0)
+                    increasedArr[i] = value;
+                else
+                    increasedArr[i] = arr[i-1];
+            }
+            return increasedArr;
         }
     }
 }
