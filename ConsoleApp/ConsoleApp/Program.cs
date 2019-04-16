@@ -14,52 +14,60 @@ namespace ConsoleApp
 
             //Task2();
 
-            Task3();
+            //Task3();
+
+            Task4();
 
             //Task5();
 
             Console.ReadKey();
         }
 
-        static int[] Task1()
+        static int[] GetArray()
         {
             int size = int.Parse(Console.ReadLine());
             int[] myArr = new int[size];
             Random rnd = new Random();
+            Console.Clear();
+            for (int i = 0; i < myArr.Length; i++)
+            {
+                myArr[i] = rnd.Next(-20, 21);
+            }
+            Console.WriteLine("Sample array");
+            foreach (var item in myArr)
+            {
+                Console.Write(item + " ");
+            }
+            return myArr;
+        }
+
+        static void Task1()
+        {
             int maxVal = int.MinValue;
             int minVal = int.MaxValue;
             double sum = 0;
-
+            int[] myArr = GetArray();
             for (int i = 0; i < myArr.Length; i++)
             {
-                myArr[i] = rnd.Next(-20,21);
                 if (myArr[i] > maxVal)
                     maxVal = myArr[i];
                 if (myArr[i] < minVal)
                     minVal = myArr[i];
                 sum += myArr[i];
             }
-            //Console.WriteLine("Average: "+(Math.Round((double)(sum / myArr.Length),2)));
-            //Console.WriteLine("Max: "+ maxVal);
-            //Console.WriteLine("Min: " + minVal);
-            //foreach (var item in myArr)
-            //{
-            //    if (item % 2 != 0)
-            //        Console.WriteLine(item);
-            //}
-            return myArr;
+            Console.WriteLine("Average: " + (Math.Round((double)(sum / myArr.Length), 2)));
+            Console.WriteLine("Max: " + maxVal);
+            Console.WriteLine("Min: " + minVal);
+            foreach (var item in myArr)
+            {
+                if (item % 2 != 0)
+                    Console.WriteLine(item);
+            }
         }
 
         static void Task2()
         {
-            int[] arr = Task1();
-            Console.Clear();
-            Console.WriteLine("Sample array:"); //Print sample array.
-            foreach (var item in arr)
-            {
-                Console.Write(item + " ");
-            }
-
+            int[] arr = GetArray();
             string[] inclNum = new string[arr.Length]; //Create string array to fill it with non-duplicated values.
             bool isDuplicated = false;
             int uniqueCount = 0;
@@ -99,13 +107,7 @@ namespace ConsoleApp
 
         static void Task5()
         {
-            int[] arr = Task1();
-            Console.Clear();
-            foreach (var item in arr)
-            {
-                Console.Write(item+" ");
-            }
-            Console.WriteLine();
+            int[] arr = GetArray();
             arr = MyReverse(arr);
             foreach (var item in arr)
             {
@@ -125,12 +127,7 @@ namespace ConsoleApp
 
         static void Task3()
         {
-            int[] arr = Task1();
-            Console.WriteLine("Sample array:");
-            foreach (var item in arr)
-            {
-                Console.Write(item + " ");
-            }
+            int[] arr = GetArray();
             int maxVal = 10;
             int minVal = -10;
             Console.WriteLine();
@@ -139,6 +136,25 @@ namespace ConsoleApp
             {
                 if ((arr[i] > minVal && arr[i] < maxVal))
                     Console.Write(i+1 + " ");
+            }
+        }
+
+        static void Task4()
+        {
+            int[] arr = GetArray();
+            double sum = 0;
+            double average = 0;
+            foreach (var item in arr)
+            {
+                sum += item;
+            }
+            average = sum / arr.Length;
+            Console.WriteLine();
+            Console.WriteLine(average);
+            foreach (var item in arr)
+            {
+                if (item > average)
+                    Console.Write(item+" ");
             }
         }
     }
