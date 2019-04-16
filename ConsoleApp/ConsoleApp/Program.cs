@@ -14,7 +14,9 @@ namespace ConsoleApp
 
             //Task2();
 
-            Task5();
+            Task3();
+
+            //Task5();
 
             Console.ReadKey();
         }
@@ -119,6 +121,25 @@ namespace ConsoleApp
                 reversedArr[j] = arr[i];
             }
             return reversedArr;
+        }
+
+        static void Task3()
+        {
+            int[] arr = Task1();
+            Console.WriteLine("Sample array:");
+            foreach (var item in arr)
+            {
+                Console.Write(item + " ");
+            }
+            int maxVal = 10;
+            int minVal = -10;
+            Console.WriteLine();
+            Console.WriteLine($"Indexes of elements within {minVal} and {maxVal} range:");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if ((arr[i] > minVal && arr[i] < maxVal))
+                    Console.Write(i+1 + " ");
+            }
         }
     }
 }
