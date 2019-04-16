@@ -26,7 +26,9 @@ namespace ConsoleApp
 
             //Task8();
 
-            Task9();
+            //Task9();
+
+            Task10();
 
             Console.ReadKey();
         }
@@ -295,6 +297,26 @@ namespace ConsoleApp
                 }
                 Console.WriteLine();
             }
+        }
+
+        static void Task10()
+        {
+            int[,] arr = GetTwoDimArray();
+            Console.WriteLine();
+            int columnToCountSum = int.Parse(Console.ReadLine())-1;
+            int sum = 0;
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (j==columnToCountSum)
+                    {
+                        sum += arr[i, j];
+                    }
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine($"The sum of {columnToCountSum+1} colunm is {sum}");
         }
     }
 }
