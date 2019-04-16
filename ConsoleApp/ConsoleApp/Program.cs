@@ -16,9 +16,11 @@ namespace ConsoleApp
 
             //Task3();
 
-            Task4();
+            //Task4();
 
             //Task5();
+
+            SubArray(GetArray(), 2,3 );
 
             Console.ReadKey();
         }
@@ -156,6 +158,31 @@ namespace ConsoleApp
                 if (item > average)
                     Console.Write(item+" ");
             }
+        }
+
+        static int[] SubArray(int[] array, int index, int count)
+        {
+            int[] arr = array;
+            int[] modifiedArr = new int[count];
+            Console.WriteLine();
+            for (int i = index, j=0; j < modifiedArr.Length; i++,j++)
+            {
+                if(j<array.Length-index)
+                {
+                    modifiedArr[j] = arr[i];
+                }
+                else
+                {
+                    modifiedArr[j] = 1;
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("Modified array:");
+            foreach (var item in modifiedArr)
+            {
+                Console.Write(item+ " ");
+            }
+            return modifiedArr;
         }
     }
 }
