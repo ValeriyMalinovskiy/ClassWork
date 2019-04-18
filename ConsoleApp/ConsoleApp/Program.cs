@@ -14,7 +14,9 @@ namespace ConsoleApp
 
             //Task3();
 
-            Task4();
+            //Task4();
+
+            Task5();
 
             Console.ReadKey();
         }
@@ -37,7 +39,7 @@ namespace ConsoleApp
 
         static string GetString()
         {
-            return "The? string to look for ?the symbol";
+            return "The? string  to       look for ?the symbol";
         }
 
         static void Task3()
@@ -65,6 +67,29 @@ namespace ConsoleApp
                 }
             }
             Console.WriteLine(str);
+        }
+
+        static void Task5()
+        {
+            string str = GetString();
+            string[] tempStrArr = str.Split(' ');
+            for (int i = 0; i < tempStrArr.Length; i++)
+            {
+                if (tempStrArr[i].IndexOf(' ') != -1)
+                {
+                    tempStrArr[i]=tempStrArr[i].Remove(tempStrArr[i].IndexOf(' '),1);
+                }
+            }
+
+            string resultStr="";
+            foreach (var item in tempStrArr)
+            {
+                if (!String.IsNullOrWhiteSpace(item))
+                {
+                    resultStr = resultStr +  item + " ";
+                }
+            }
+            Console.WriteLine(resultStr);
         }
     }
 }
