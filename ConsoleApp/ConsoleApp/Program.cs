@@ -12,7 +12,9 @@ namespace ConsoleApp
         {
             //Task2();
 
-            Task3();
+            //Task3();
+
+            Task4();
 
             Console.ReadKey();
         }
@@ -35,7 +37,7 @@ namespace ConsoleApp
 
         static string GetString()
         {
-            return "The string to look for the symbol";
+            return "The? string to look for ?the symbol";
         }
 
         static void Task3()
@@ -43,8 +45,26 @@ namespace ConsoleApp
             string str = GetString();
 
             StringBuilder sb = new StringBuilder(str);
-            sb.Insert(27, "CORRECT ");
+            sb.Insert(27, "CORRECT " +
+                "");
             Console.WriteLine(sb);
+        }
+
+        static void Task4()
+        {
+            string str = GetString();
+            int firstOccur = str.IndexOf('?');
+            int secondOccur = str.LastIndexOf('?');
+            for (int i = firstOccur; i < secondOccur; i++)
+            {
+                firstOccur = str.IndexOf('?');
+                secondOccur = str.LastIndexOf('?');
+                if (str[i] == ' ')
+                {
+                    str = str.Remove(i,1);
+                }
+            }
+            Console.WriteLine(str);
         }
     }
 }
