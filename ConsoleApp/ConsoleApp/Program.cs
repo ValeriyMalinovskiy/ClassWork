@@ -16,7 +16,9 @@ namespace ConsoleApp
 
             //Task4();
 
-            Task5();
+            //Task5();
+
+            Task1();
 
             Console.ReadKey();
         }
@@ -90,6 +92,30 @@ namespace ConsoleApp
                 }
             }
             Console.WriteLine(resultStr);
+        }
+
+        static void Task1()
+        {
+            string str = GetString();
+            StringBuilder sb = new StringBuilder();
+            bool isRepeated = false;
+            for (int i = 0; i < str.Length; i++)
+            {
+                isRepeated = false;
+                for (int j=1;j<i;j++)
+                {
+                    if ((str[i]==str[j]))
+                    {
+                        isRepeated = true;
+                    }
+                }
+                if (!isRepeated)
+                {
+                    sb.Append(str[i]);
+                }
+
+            }
+            Console.WriteLine(sb);
         }
     }
 }
