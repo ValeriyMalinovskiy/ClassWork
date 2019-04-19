@@ -20,7 +20,9 @@ namespace ConsoleApp
 
             //Task1();
 
-            Task6();
+            //Task6();
+
+            Task7();
 
             Console.ReadKey();
         }
@@ -43,7 +45,7 @@ namespace ConsoleApp
 
         static string GetString()
         {
-            return "The? string  to       look for ?the symbol";
+            return "The? string to look for ?the symbol";
         }
 
         static void Task3()
@@ -129,6 +131,21 @@ namespace ConsoleApp
             Console.WriteLine("Enter the number of the word");
             int wordNumber = int.Parse(Console.ReadLine());
             Console.WriteLine(wordArray[wordNumber].ElementAt(0));
+        }
+
+        static void Task7()
+        {
+            string str = GetString();
+            string[] arrayToReverse = str.Split(' ');
+            string[] reversedString = new string[arrayToReverse.Length];
+            for (int i = 0, j= arrayToReverse.Length-1; i < arrayToReverse.Length; i++, j--)
+            {
+                reversedString[j] = arrayToReverse[i];
+            }
+            foreach (var item in reversedString)
+            {
+                Console.Write(item+" ");
+            }
         }
     }
 }
