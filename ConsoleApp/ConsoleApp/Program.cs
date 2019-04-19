@@ -18,7 +18,9 @@ namespace ConsoleApp
 
             //Task5();
 
-            Task1();
+            //Task1();
+
+            Task6();
 
             Console.ReadKey();
         }
@@ -116,6 +118,17 @@ namespace ConsoleApp
 
             }
             Console.WriteLine(sb);
+        }
+
+        static void Task6()
+        {
+            string str = "Nayti slovo, stoyaschee v tekste pod opredelennyim nomerom," +
+                " i vyivesti ego pervuyu bukvu.";
+            Console.WriteLine(str);
+            string[] wordArray = str.Split(' ');
+            Console.WriteLine("Enter the number of the word");
+            int wordNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine(wordArray[wordNumber].ElementAt(0));
         }
     }
 }
