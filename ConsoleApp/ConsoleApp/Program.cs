@@ -22,7 +22,9 @@ namespace ConsoleApp
 
             //Task6();
 
-            Task7();
+            //Task7();
+
+            Task8();
 
             Console.ReadKey();
         }
@@ -146,6 +148,32 @@ namespace ConsoleApp
             {
                 Console.Write(item+" ");
             }
+        }
+
+        static void Task8()
+        {
+            string str = GetString();
+            string[] auxStringArray = str.Split(' ');
+            int longestWord = int.MinValue;
+            int shortestWord = int.MaxValue;
+            int minIndex = 0;
+            int maxIndex = 0;
+            for (int i = 0; i < auxStringArray.Length; i++)
+            {
+                if(auxStringArray[i].Length>longestWord)
+                {
+                    longestWord = auxStringArray[i].Length;
+                    maxIndex = i;
+                }
+                if (auxStringArray[i].Length<shortestWord)
+                {
+                    shortestWord = auxStringArray[i].Length;
+                    minIndex = i;
+                }
+            }
+            Console.WriteLine(str);
+            Console.WriteLine($"The shortest word is: {auxStringArray[minIndex]}");
+            Console.WriteLine($"The longest word is: {auxStringArray[maxIndex]}");
         }
     }
 }
