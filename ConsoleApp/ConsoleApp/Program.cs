@@ -10,6 +10,10 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            Task1.UserInterface();
+
+            Console.ReadKey();
         }
+        // Task1
     }
 }
