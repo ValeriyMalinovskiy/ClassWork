@@ -13,26 +13,26 @@ namespace ConsoleApp
             Console.WriteLine();
             Console.WriteLine("Enter the second number");
             decimal num2 = decimal.Parse(Console.ReadLine());
-            PrintResult(UserInputAnalyzer((operation, num1, num2)));
+            PrintResult(UserInputAnalyzer(operation, num1, num2));
         }
 
-        private static decimal UserInputAnalyzer((ConsoleKey, decimal, decimal) tuple)
+        private static decimal UserInputAnalyzer(ConsoleKey key, decimal num1, decimal num2)
         {
-            if (tuple.Item1 == ConsoleKey.Add)
+            if (key == ConsoleKey.Add)
             {
-                return Add(tuple.Item2, tuple.Item3);
+                return Add(num1, num2);
             }
-            else if (tuple.Item1 == ConsoleKey.Subtract)
+            else if (key == ConsoleKey.Subtract)
             {
-                return Subtract(tuple.Item2, tuple.Item3);
+                return Subtract(num1, num2);
             }
-            else if (tuple.Item1 == ConsoleKey.Multiply)
+            else if (key == ConsoleKey.Multiply)
             {
-                return Multiply(tuple.Item2, tuple.Item3);
+                return Multiply(num1, num2);
             }
-            else if (tuple.Item1 == ConsoleKey.Divide)
+            else if (key == ConsoleKey.Divide)
             {
-                return Divide(tuple.Item2, tuple.Item3);
+                return Divide(num1, num2);
             }
             else Console.WriteLine("invalid input");
             return 0;
