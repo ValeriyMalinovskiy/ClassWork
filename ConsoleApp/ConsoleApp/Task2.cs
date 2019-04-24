@@ -10,18 +10,25 @@ namespace ConsoleApp
     {
         public static void CurrencyExchange()
         {
-            decimal toExchange;
+            decimal moneyToExchange;
+            decimal moneyExchanged;
             do
             {
-                Console.WriteLine("Enter the amount of money you want to exchange");
+                ConsoleMessagePrinter("Enter the amount of money you want to exchange");
             }
-            while (decimal.TryParse(Console.ReadLine(), out toExchange) == false);
-            Console.WriteLine(decimal.Round(Exchanger(toExchange,true ,"Type the currency to exchange from:\tEUR\tUSD\tUAH"),3));
+            while (decimal.TryParse(ConsoleTextToString(), out moneyToExchange) == false);
+            moneyExchanged = decimal.Round(Exchanger(moneyToExchange, true, "Type the currency to exchange from:\tEUR\tUSD\tUAH"), 3);
+            ConsoleMessagePrinter(moneyExchanged.ToString());
         }
 
-        static void MessagePrinter (string msg)
+        static void ConsoleMessagePrinter (string msg)
         {
             Console.WriteLine(msg);
+        }
+
+        static string ConsoleTextToString()
+        {
+            return Console.ReadLine().ToUpper();
         }
 
         static decimal Exchanger (decimal moneyToExchange, bool toUsd, string msg)
@@ -31,8 +38,8 @@ namespace ConsoleApp
             bool isInputCorrect = false;
             while (!isInputCorrect)
             {
-                MessagePrinter(msg);
-                switch (Console.ReadLine().ToUpper())
+                ConsoleMessagePrinter(msg);
+                switch (ConsoleTextToString())
                 {
                     case "UAH":
                         {
