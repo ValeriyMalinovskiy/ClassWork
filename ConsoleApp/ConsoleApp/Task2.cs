@@ -8,44 +8,61 @@ namespace ConsoleApp
 {
     class Task2
     {
-        public static void UserInterface()
+        public static void CurrencyExchange()
         {
-            decimal dollars = 0;
-            Console.WriteLine("Enter the amont");
-            decimal toExchange = decimal.Parse(Console.ReadLine());
-            Console.WriteLine($"Currency to exchange from:\nEURO - press 1\nDOLLAR - press 2\nUAH - press 3");
-            string currencyFrom = Console.ReadLine();
-            Console.WriteLine($"Currency to exchange to:\nEURO - press 1\nDOLLAR - press 2\nUAH - press 3");
-            string currencyTo = Console.ReadLine();
-
-            //switch (currencyFrom)
-            //{
-            //    //case "1":
-            //    //    {
-
-            //    //    }
-            //    //default:
-            //    //    break;
-            //}
-
-            
+            decimal toExchange;
+            do
+            {
+                Console.WriteLine("Enter the amount of money you want to exchange");
+            }
+            while (decimal.TryParse(Console.ReadLine(), out toExchange) == false);
+            Console.WriteLine(decimal.Round(Exchanger(toExchange,true ,"Type the currency to exchange from:\tEUR\tUSD\tUAH"),3));
         }
 
-        // bool = true - convert to dollars.
-        static decimal DollarExchange(decimal uah, decimal eur)
+        static void MessagePrinter (string msg)
         {
-            const decimal dollarToUah = 28;
-            const decimal dollarToEur = 0.9m;
-            if (uah!=0)
-            {
-                return uah / dollarToUah;
-            }
-            else if (eur != 0)
-            {
-                return eur / dollarToEur;
-            }
-            return 0;
+            Console.WriteLine(msg);
         }
 
+        static decimal Exchanger (decimal moneyToExchange, bool toUsd, string msg)
+        {
+            decimal exchangedMoney = 0;
+            string message = "Type the currency to exchange to:\tEUR\tUSD\tUAH";
+            bool isInputCorrect = false;
+            while (!isInputCorrect)
+            {
+                MessagePrinter(msg);
+                switch (Console.ReadLine().ToUpper())
+                {
+                    case "UAH":
+                        {
+                            if (toUsd)
+                                return exchangedMoney = Exchanger(moneyToExchange / 27, false, message);
+                            else
+                                return exchangedMoney = moneyToExchange * 27;
+                        }
+                    case "EUR":
+                        {
+                            if (toUsd)
+                                return exchangedMoney = Exchanger(moneyToExchange / 0.9m, false, message);
+                            else
+                                return exchangedMoney = moneyToExchange * 0.9m;
+                        }
+                    case "USD":
+                        {
+                            if (toUsd)
+                                return exchangedMoney = Exchanger(moneyToExchange, false, message);
+                            else
+                                return exchangedMoney = moneyToExchange;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Wrong input, try again");
+                            break;
+                        }
+                }
+            }
+            return exchangedMoney;
+        }
     }
 }

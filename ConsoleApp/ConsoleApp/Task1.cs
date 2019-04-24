@@ -4,7 +4,7 @@ namespace ConsoleApp
 {
     public class Task1
     {
-        public static void UserInterface()
+        public static void Calculator()
         {
             Console.WriteLine("Enter the first number");
             decimal num1 = decimal.Parse(Console.ReadLine());

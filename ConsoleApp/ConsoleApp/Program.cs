@@ -10,9 +10,9 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            //Task1.UserInterface();
+            //Task1.Calculator();
 
-            Task2.UserInterface();
+            Task2.CurrencyExchange();
 
             Console.ReadKey();
         }
