@@ -23,6 +23,7 @@ namespace ConsoleApp
             xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
             range = xlWorkSheet.UsedRange;
             int rw = range.Rows.Count;
+            decimal usdRate = 0;
         
             bool isCurrencyFound = false;
             int i = 1;
@@ -32,7 +33,12 @@ namespace ConsoleApp
                 {
                     if (xlWorkSheet.Cells[i, 1].Value2.ToString() == currencyIso)
                     {
-                        return Convert.ToDecimal(xlWorkSheet.Cells[i, 3].Value2);
+                        usdRate = Convert.ToDecimal(xlWorkSheet.Cells[i, 3].Value2);
+                        xlWorkBook.Close(true, null, null);
+                        xlApp.Quit();
+                        Marshal.ReleaseComObject(xlWorkBook);
+                        Marshal.ReleaseComObject(xlApp);
+                        return usdRate;
                     }
                 }
                 ConsoleMessagePrinter("Wrong currency ISO code. Press Down Arrow to print the list or esc to try again");
@@ -49,10 +55,6 @@ namespace ConsoleApp
                     currencyIso = ConsoleTextToString();
                 }
             }
-            xlWorkBook.Close(true, null, null);
-                xlApp.Quit();
-                Marshal.ReleaseComObject(xlWorkBook);
-                Marshal.ReleaseComObject(xlApp);
             return 1;
         }
 
