@@ -10,7 +10,7 @@ namespace ConsoleApp
     {
         private string change;
 
-        public string GetStructureFiekd()
+        public string GetStructureField()
         {
             return this.change;
         }

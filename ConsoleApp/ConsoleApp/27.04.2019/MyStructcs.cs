@@ -4,9 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp._27._04._2019
+namespace ConsoleApp
 {
-    class MyStructcs
+    public struct MyStructure
     {
+        private string change;
+
+        public string GetStructureField()
+        {
+            return this.change;
+        }
+
+        public void SetStructureField(string fieldValue)
+        {
+            this.change = fieldValue;
+        }
     }
 }

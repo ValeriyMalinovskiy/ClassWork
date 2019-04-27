@@ -10,8 +10,12 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            RailwayInfo rwi = new RailwayInfo();
-            rwi.ShowTrainInfo();
+            //RailwayInfo rwi = new RailwayInfo();
+            //rwi.ShowTrainInfo();
+
+            Handler hndlr = new Handler();
+            hndlr.Execute();
+
             Console.ReadKey();
         }
     }
