@@ -8,6 +8,16 @@ namespace ConsoleApp
 {
     class MyClass
     {
-        private string 
+        private string change;
+
+        public string GetStructureFiekd()
+        {
+            return this.change;
+        }
+
+        public void SetClassField(string fieldValue)
+        {
+            this.change = fieldValue;
+        }
     }
 }
