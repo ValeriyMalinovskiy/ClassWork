@@ -18,7 +18,7 @@ namespace ConsoleApp
             Excel.Worksheet xlWorkSheet;
             Excel.Range range;
             xlApp = new Excel.Application();
-            xlWorkBook = xlApp.Workbooks.Open(@"C:\Users\Valeriy Malinovskiy\source\repos\ClassWork\ConsoleApp\ConsoleApp\USD_rate_to_other_currencies.xlsx",
+            xlWorkBook = xlApp.Workbooks.Open(@"C:\Users\Valeriy Malinovskiy\source\repos\ClassWork\ConsoleApp\ConsoleApp\20.04.2019\USD_rate_to_other_currencies.xlsx",
                 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
             range = xlWorkSheet.UsedRange;
