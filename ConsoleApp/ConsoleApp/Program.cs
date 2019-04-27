@@ -10,6 +10,10 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            RailwayInfo rwi = new RailwayInfo();
+            rwi.ShowTrainInfo();
+            Console.ReadKey();
         }
     }
 }
+ 
