@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
-    <Compile Include="27.04.2019\Program.cs" />
+    <Compile Include="27.04.2019\MyClass.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="27.04.2019\RailwayInfo.cs" />
     <Compile Include="27.04.2019\Train.cs" />
