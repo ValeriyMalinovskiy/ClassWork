@@ -13,8 +13,10 @@ namespace ConsoleApp
             //RailwayInfo rwi = new RailwayInfo();
             //rwi.ShowTrainInfo();
 
-            Handler hndlr = new Handler();
-            hndlr.Execute();
+            //Handler hndlr = new Handler();
+            //hndlr.Execute();
+
+            Task3.UserInterface();
 
             Console.ReadKey();
         }
