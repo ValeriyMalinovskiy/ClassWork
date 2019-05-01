@@ -51,6 +51,8 @@
     <Compile Include="27.04.2019\RailwayInfo.cs" />
     <Compile Include="27.04.2019\Train.cs" />
     <Compile Include="27.04.2019\Task3.cs" />
+    <Compile Include="27.04.2019\Pupil.cs" />
+    <Compile Include="27.04.2019\Task4.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

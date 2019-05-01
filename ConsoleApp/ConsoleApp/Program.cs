@@ -16,7 +16,9 @@ namespace ConsoleApp
             //Handler hndlr = new Handler();
             //hndlr.Execute();
 
-            Task3.UserInterface();
+            //Task3.UserInterface();
+
+            Task4.PrintPupilTable();
 
             Console.ReadKey();
         }
