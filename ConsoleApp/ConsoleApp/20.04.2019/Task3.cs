@@ -37,7 +37,7 @@ namespace ConsoleApp
                 {
                     case ConsoleKey.P:
                         {
-                            MakePayment(ref monthToPayback, ref moneyToPayBack, ref currentMonth, minimumPayment, ref moneyToPayForNearrestPayment, ref moneyPayed);
+                            MakePayment(ref monthToPayback, ref moneyToPayBack, ref currentMonth, minimumPayment, ref moneyToPayForNearrestPayment, ref moneyPayed, initialMoney);
                             break;
                         }
                     case ConsoleKey.S:
@@ -47,7 +47,7 @@ namespace ConsoleApp
                         }
                     default:
                         {
-                            Console.WriteLine("Incorrect input. Try again.");
+                            Console.WriteLine("Incorrect button. Try again.");
                             System.Threading.Thread.Sleep(600);
                             Console.Clear();
                             break;
@@ -61,31 +61,55 @@ namespace ConsoleApp
         }
 
         public static void MakePayment(ref int monthToPayback, ref decimal moneyToPayBack, ref int currentMonth,
-                                        decimal minimumPayment, ref decimal moneyToPayForNearrestPayment, ref decimal moneyPayed)
+                                        decimal minimumPayment, ref decimal moneyToPayForNearrestPayment, ref decimal moneyPayed, decimal initialMoney)
         {
-            Console.WriteLine($"Enter the sum. Current payment must be at least {moneyToPayForNearrestPayment}.");
-            decimal payment;
-            while (!decimal.TryParse((Console.ReadLine()), out payment))
+            if(currentMonth==monthToPayback-1)
             {
-                Console.WriteLine("Incorrect input. Try again.");
-                System.Threading.Thread.Sleep(600);
-                Console.Clear();
-                Console.WriteLine($"Enter the sum. Current payment must be at least {moneyToPayForNearrestPayment}.");
-            }
-            if (payment < 0)
-            {
-                Console.WriteLine("You can't take the money back. Payment wasn't processed.");
-            }
-            else if ((payment >= minimumPayment) || (payment >= moneyToPayForNearrestPayment))
-            {
-                moneyToPayBack -= payment;
+                decimal payment;
+                do
+                {
+                    Console.WriteLine($"This is the last payment. To pay back the loan you need to pay {initialMoney - moneyPayed}");
+                    while(!(decimal.TryParse(Console.ReadLine(), out payment)))
+                    {
+                        Console.WriteLine("Incorrect input. Try again.");
+                    }
+                }
+                while ((payment != initialMoney - moneyPayed));
                 moneyPayed += payment;
-                currentMonth++;
-                moneyToPayForNearrestPayment = currentMonth * minimumPayment + minimumPayment - moneyPayed;
             }
             else
             {
-                Console.WriteLine($"Current payment can't be less than {moneyToPayForNearrestPayment}. Payment wasn't processed.");
+                if (moneyToPayForNearrestPayment > 0)
+                {
+                    Console.WriteLine($"Enter the sum. Current payment must be at least {moneyToPayForNearrestPayment}.");
+                }
+                else
+                {
+                    Console.WriteLine("You can skip this payment by paying zero");
+                }
+                decimal payment;
+                while (!decimal.TryParse((Console.ReadLine()), out payment))
+                {
+                    Console.WriteLine("Incorrect input. Try again.");
+                    System.Threading.Thread.Sleep(600);
+                    Console.Clear();
+                    Console.WriteLine("Enter the payment");
+                }
+                if (payment + moneyPayed > initialMoney)
+                {
+                    Console.WriteLine("You can't return more than you took. Payment wasn't processed.");
+                }
+                else if ((payment >= minimumPayment) || (payment >= moneyToPayForNearrestPayment))
+                {
+                    moneyToPayBack -= payment;
+                    moneyPayed += payment;
+                    currentMonth++;
+                    moneyToPayForNearrestPayment = currentMonth * minimumPayment + minimumPayment - moneyPayed;
+                }
+                else
+                {
+                    Console.WriteLine($"Current payment can't be less than {moneyToPayForNearrestPayment}. Payment wasn't processed.");
+                }
             }
         }
 
