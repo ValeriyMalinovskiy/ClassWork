@@ -12,7 +12,9 @@ namespace ConsoleApp
         {
             //Task1.Calculator();
 
-            Task2.CurrencyExchange();
+            //Task2.CurrencyExchange();
+
+            Task3.BankLoanApp();
 
             Console.ReadKey();
         }
