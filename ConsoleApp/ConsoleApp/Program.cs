@@ -16,7 +16,9 @@ namespace ConsoleApp
 
             //Task3.BankLoanApp();
 
-            Atm.AtmPin();
+            //Atm.AtmPin();
+
+            Triangle.TriangleOfConsecutiveOddNumbers();
 
             Console.ReadKey();
         }
