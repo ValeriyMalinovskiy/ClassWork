@@ -10,7 +10,7 @@
 - [x] Представьте, что вы реализуете программу для банка, которая помогает определить, погасил ли клиент кредит или нет. Допустим, ежемесячная сумма платежа должна составлять 100 грн. Клиент должен выполнить 7 платежей, но может платить реже большими суммами. Т.е., может двумя платежами по 300 и 400 грн. Закрыть весь долг.
 Создайте метод, который будет в качестве аргумента принимать сумму платежа, введенную экономистом банка. Метод выводит на экран информацию о состоянии кредита (сумма задолженности, сумма переплаты, сообщение об отсутствии долга).
 
-- [ ] ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+- [x] ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
 	If the function is passed a valid PIN string, return true, else return false.
 
 	eg:
@@ -20,7 +20,7 @@
 	ValidatePin("a234") => false
 
 
-- [ ] Given the triangle of consecutive odd numbers:
+- [x] Given the triangle of consecutive odd numbers:
 ```
 				1
 			3   	  5
@@ -34,7 +34,7 @@ Calculate the row sums of this triangle from the row index (starting at index 1)
 	RowSumOddNumbers(2); // 3 + 5 = 8
 
 
-- [ ] Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing
+- [x] Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing
 	distinct letters,
 	each taken only once - coming from s1 or s2.
 
@@ -47,7 +47,7 @@ Calculate the row sums of this triangle from the row index (starting at index 1)
 	a = "abcdefghijklmnopqrstuvwxyz"
 	Longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
-- [ ] Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the
+- [x] Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the
 	output should be capitalized only if the original word was capitalized.
 
 	Examples:
