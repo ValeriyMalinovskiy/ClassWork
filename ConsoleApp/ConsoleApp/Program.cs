@@ -14,7 +14,9 @@ namespace ConsoleApp
 
             //Task2.CurrencyExchange();
 
-            Task3.BankLoanApp();
+            //Task3.BankLoanApp();
+
+            Atm.AtmPin();
 
             Console.ReadKey();
         }
