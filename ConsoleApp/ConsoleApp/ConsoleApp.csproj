@@ -54,6 +54,7 @@
     <Compile Include="20.04.2019\Task3.cs" />
     <Compile Include="20.04.2019\Triangle.cs" />
     <Compile Include="20.04.2019\Task6.cs" />
+    <Compile Include="20.04.2019\Task7.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

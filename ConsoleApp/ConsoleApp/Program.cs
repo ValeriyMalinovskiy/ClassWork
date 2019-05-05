@@ -20,7 +20,10 @@ namespace ConsoleApp
 
             //Triangle.TriangleOfConsecutiveOddNumbers();
 
-            Task6.StringJoiner("xyaabbbccccdefww", "xxxxyyyyabklmopq");
+            //Task6.StringJoiner("xyaabbbccccdefww", "xxxxyyyyabklmopq");
+
+            Console.WriteLine(Task7.CamelCaser("the-stealth-warrior"));
+            Console.WriteLine(Task7.CamelCaser("The_Stealth_Warrior"));
 
             Console.ReadKey();
         }
