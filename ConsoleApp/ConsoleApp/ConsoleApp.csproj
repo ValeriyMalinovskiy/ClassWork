@@ -52,7 +52,8 @@
     <Compile Include="20.04.2019\Task1.cs" />
     <Compile Include="20.04.2019\Task2.cs" />
     <Compile Include="20.04.2019\Task3.cs" />
-    <Compile Include="Triangle.cs" />
+    <Compile Include="20.04.2019\Triangle.cs" />
+    <Compile Include="20.04.2019\Task6.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

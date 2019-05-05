@@ -18,7 +18,9 @@ namespace ConsoleApp
 
             //Atm.AtmPin();
 
-            Triangle.TriangleOfConsecutiveOddNumbers();
+            //Triangle.TriangleOfConsecutiveOddNumbers();
+
+            Task6.StringJoiner("xyaabbbccccdefww", "xxxxyyyyabklmopq");
 
             Console.ReadKey();
         }
