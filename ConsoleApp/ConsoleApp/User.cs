@@ -69,6 +69,8 @@ namespace ConsoleApp
         }
         public Student(string name, int age, int scholarship, int year) : base(name, age)
         {
+            Year = year;
+            Scholarship = scholarship;
         }
 
         class Driver : Worker
@@ -77,7 +79,8 @@ namespace ConsoleApp
             public DrivingLicenseCategory DrivingLicenseCategory { get; set; }
             public Driver(string name, int age, int salary, int drivingExperience, DrivingLicenseCategory drivingLicenseCategory) : base(name, age, salary)
             {
-
+                DrivingExperience = drivingExperience;
+                DrivingLicenseCategory = drivingLicenseCategory;
             }
         }
 
