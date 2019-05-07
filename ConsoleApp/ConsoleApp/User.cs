@@ -29,7 +29,7 @@ namespace ConsoleApp
             }
             set
             {
-                if (salary > 0)
+                if (value > 0)
                 {
                     salary = value;
                 }
@@ -72,24 +72,25 @@ namespace ConsoleApp
             Year = year;
             Scholarship = scholarship;
         }
+    }
 
-        class Driver : Worker
+    class Driver : Worker
+    {
+        public int DrivingExperience { get; set; }
+        public DrivingLicenseCategory DrivingLicenseCategory { get; set; }
+        public Driver(string name, int age, int salary, int drivingExperience, DrivingLicenseCategory drivingLicenseCategory) : base(name, age, salary)
         {
-            public int DrivingExperience { get; set; }
-            public DrivingLicenseCategory DrivingLicenseCategory { get; set; }
-            public Driver(string name, int age, int salary, int drivingExperience, DrivingLicenseCategory drivingLicenseCategory) : base(name, age, salary)
-            {
-                DrivingExperience = drivingExperience;
-                DrivingLicenseCategory = drivingLicenseCategory;
-            }
-        }
-
-        enum DrivingLicenseCategory
-        {
-            A,
-            B,
-            C
+            DrivingExperience = drivingExperience;
+            DrivingLicenseCategory = drivingLicenseCategory;
         }
     }
+
+    enum DrivingLicenseCategory
+    {
+        A,
+        B,
+        C
+    }
+
 
 }

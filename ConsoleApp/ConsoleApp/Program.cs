@@ -15,10 +15,10 @@ namespace ConsoleApp
             //W2.Age = 0;
             //Console.WriteLine(w1.Salary+W2.Salary);
             //Console.WriteLine(W2.Age);
-
-            Employee e1 = new Employee("Иван",25 , 1000);
+            
+            Driver d1 = new Driver("Иван",25 , 5000, 4, DrivingLicenseCategory.A);
             Employee e2 = new Employee("Вася",26 ,2000);
-            Console.WriteLine(e1.Salary + e2.Salary);
+            Console.WriteLine(d1.Salary + e2.Salary);
 
             Console.ReadKey();
         }
