@@ -37,7 +37,7 @@ namespace ConsoleApp
         }
         public Employee(string name, int age, int salary) : base(name, age)
         {
-            this.salary = salary;
+            Salary = salary;
         }
     }
 
@@ -53,6 +53,7 @@ namespace ConsoleApp
             }
             set
             {
+                scholarship = value;
             }
         }
         public int Year
@@ -63,6 +64,7 @@ namespace ConsoleApp
             }
             set
             {
+                year = value;
             }
         }
         public Student(string name, int age, int scholarship, int year) : base(name, age)
@@ -77,7 +79,6 @@ namespace ConsoleApp
             {
 
             }
-
         }
 
         enum DrivingLicenseCategory
