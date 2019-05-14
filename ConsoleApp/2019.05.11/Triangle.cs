@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace ConsoleApp
+namespace _2019May11
 {
     internal class Triangle : Figure
     {
