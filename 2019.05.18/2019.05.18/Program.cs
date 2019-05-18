@@ -20,23 +20,7 @@ namespace _2019May11
 
             foreach (var item in figures)
             {
-                if (item.GetType()==typeof(Circle))
-                {
-                    ((Circle)item).Draw();
-                }
-                //else if (item is Triangle newTriangle)
-                //{
-                //   newTriangle.Draw();
-                //}
-                else if (item is Triangle)
-                {
-                    Triangle triangle = (Triangle)item;
-                    triangle.Draw();
-                }
-                else
-                {
-                    ((Square)item).Draw();
-                }
+                item.Draw();
             }
         }
     }

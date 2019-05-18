@@ -11,22 +11,14 @@ namespace _2019May11
     {
         private int radius;
 
-        public int Radius
-        {
-            get
-            {
-                return this.radius;
-            }
-        }
-
         public Circle(Point centerCoordinates, int radius) : base(centerCoordinates)
         {
             this.radius = radius;
         }
 
-        public void Draw()
+        public override void Draw()
         {
-            Console.WriteLine($"The {this.GetType().Name} with center coordinates {CenterCoordinates.X} and {CenterCoordinates.Y} is being painted");
+            Console.WriteLine($"The {this.GetType().Name} with radius {this.radius} center coordinates {CenterCoordinates.X} and {CenterCoordinates.Y} is being painted");
         }
     }
 }

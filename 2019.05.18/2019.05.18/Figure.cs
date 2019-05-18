@@ -24,5 +24,10 @@ namespace _2019May11
             this.centerCoordinates.X = centerCoordinates.X;
             this.centerCoordinates.Y = centerCoordinates.Y;
         }
+
+        public virtual void Draw()
+        {
+            Console.WriteLine($"The {this.GetType().Name} with center coordinates {CenterCoordinates.X} and {CenterCoordinates.Y} is being painted");
+        }
     }
 }

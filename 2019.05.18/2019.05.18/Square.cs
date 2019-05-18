@@ -11,22 +11,14 @@ namespace _2019May11
     {
         private int side;
 
-        public int Side
-        {
-            get
-            {
-                return this.side;
-            }
-        }
-
         public Square(int side, Point centerCoordinates) : base(centerCoordinates)
         {
             this.side = side;
         }
 
-        public void Draw()
+        public override void Draw()
         {
-            Console.WriteLine($"The {this.GetType().Name} with center coordinates {CenterCoordinates.X} and {CenterCoordinates.Y} is being painted");
+            Console.WriteLine($"The {this.GetType().Name} with side {this.side} center coordinates {CenterCoordinates.X} and {CenterCoordinates.Y} is being painted");
         }
     }
 }
