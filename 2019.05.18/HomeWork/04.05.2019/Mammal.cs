@@ -38,5 +38,7 @@ namespace HomeWork
         }
 
         public abstract void Eat(int foodAmount);
+
+        public abstract void Move(int distance);
     }
 }

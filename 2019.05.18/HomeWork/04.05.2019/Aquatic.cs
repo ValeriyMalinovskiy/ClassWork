@@ -16,5 +16,10 @@ namespace HomeWork
         {
             this.Weight += food * 4;
         }
+
+        public override void Move(int distance)
+        {
+            Console.WriteLine($"{this.GetType().Name} dived for {distance} meters");
+        }
     }
 }

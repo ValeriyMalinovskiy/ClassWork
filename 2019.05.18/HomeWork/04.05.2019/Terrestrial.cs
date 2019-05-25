@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeWork
 {
@@ -15,6 +11,11 @@ namespace HomeWork
         public override void Eat(int food)
         {
             this.Weight += food;
+        }
+
+        public override void Move(int distance)
+        {
+            Console.WriteLine($"{this.GetType().Name} moved for {distance} meters");
         }
     }
 }

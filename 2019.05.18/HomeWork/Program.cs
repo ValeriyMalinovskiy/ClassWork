@@ -18,6 +18,12 @@ namespace HomeWork
                 new Aquatic(4), new Arboreal(0), new Arboreal(5)
             };
             Feeder.Feed(mammals);
+
+            Random rnd = new Random();
+            foreach (var creature in mammals)
+            {
+                creature.Move(rnd.Next(1,10));
+            }
         }
     }
 }

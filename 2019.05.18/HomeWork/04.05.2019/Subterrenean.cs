@@ -16,5 +16,10 @@ namespace HomeWork
         {
             this.Weight += food * 2;
         }
+
+        public override void Move(int distance)
+        {
+            Console.WriteLine($"{this.GetType().Name} dug for {distance} cm deeper");
+        }
     }
 }
