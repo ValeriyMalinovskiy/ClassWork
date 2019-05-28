@@ -43,12 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionCamera.cs" />
-    <Compile Include="IVoiceSwitchable.cs" />
+    <Compile Include="Account.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Task1\ActionCamera.cs" />
+    <Compile Include="Task1\IVoiceSwitchable.cs" />
+    <Compile Include="Bank.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SmartDevice.cs" />
-    <Compile Include="SmartSpeaker.cs" />
+    <Compile Include="Task1\SmartDevice.cs" />
+    <Compile Include="Task1\SmartSpeaker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
