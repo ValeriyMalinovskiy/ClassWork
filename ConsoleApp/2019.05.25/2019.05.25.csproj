@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
+    <Compile Include="Task2\Accounts\Account.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="IInterestCalculatable.cs" />
+    <Compile Include="ITransactionable.cs" />
     <Compile Include="Task1\ActionCamera.cs" />
     <Compile Include="Task1\IVoiceSwitchable.cs" />
     <Compile Include="Bank.cs" />
@@ -52,6 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task1\SmartDevice.cs" />
     <Compile Include="Task1\SmartSpeaker.cs" />
+    <Compile Include="Task2\Accounts\CardAccount.cs" />
+    <Compile Include="Task2\Accounts\CurrentAccount.cs" />
+    <Compile Include="Task2\Accounts\DepositAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
