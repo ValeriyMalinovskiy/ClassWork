@@ -8,13 +8,9 @@ namespace _2019._05._25
 {
     abstract class Account
     {
-        //abstract public string CustomerName { get; protected set; }
-
-        //abstract public decimal Balance { get; protected set; }
-
         protected decimal balance;
 
-        protected string customerName;
+        //protected string customerName;
 
         public Account(string customerName, decimal initialMoney)
         {
