@@ -61,24 +61,15 @@ namespace _2019._05._25
         public void ShowAllAccounts()
         {
             int accountCounter = 0;
-
-            try
+            foreach (var item in this.accounts)
             {
-                foreach (var item in this.accounts)
-                {
-                    accountCounter++;
-                    Console.WriteLine($"{accountCounter} {item.GetType().Name} {item.Balance}");
-                }
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("No accounts created yet"); ;
+                accountCounter++;
+                Console.WriteLine($"{accountCounter} {item.GetType().Name} {item.Balance}");
             }
         }
 
         public void CloseAccount()
         {
-            this.ShowAllAccounts();
             Console.WriteLine("Enter the account number to close");
             int accountIndex = int.Parse(Console.ReadLine()) - 1;
             this.accounts[accountIndex].CloseAccount();
@@ -132,6 +123,16 @@ namespace _2019._05._25
             accounts[indexOfAccountFrom].SubtractFromAccount(sum);
             accounts[indexOfAccountTo].AddToAccount(sum);
             this.ShowAllAccounts();
+        }
+
+        public bool IsAccountCreated()
+        {
+            if (accounts.Count == 0)
+            {
+                Console.WriteLine("No accounts created yet");
+                return false;
+            }
+            return true;
         }
     }
 }
