@@ -45,13 +45,13 @@ namespace _2019._05._25
             return 0;
         }
 
-        public void SubtractFromAccount(decimal sum)
+        public override void SubtractFromAccount(decimal sum)
         {
             Console.WriteLine("You can't get the money until the deposit period is over. Press any key.");
             Console.ReadKey();
         }
 
-        public void AddToAccount(decimal sum)
+        public override void AddToAccount(decimal sum)
         {
             Console.WriteLine("You can't put the money until the deposit period is over. Press any key.");
             Console.ReadKey();

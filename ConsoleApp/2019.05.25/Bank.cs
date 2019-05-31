@@ -8,19 +8,11 @@ namespace _2019._05._25
 {
     class Bank
     {
-        private List<Customer> customers = new List<Customer>();
+        public List<Customer> customers = new List<Customer>();
 
         public void AddClientToDataBase(Customer customer)
         {
             customers.Add(customer);
-        }
-
-        public Account[] GetCustomerAccountList(Customer name)
-        {
-            foreach (var item in customers)
-            {
-                item.accounts.
-            }
         }
     }
 }

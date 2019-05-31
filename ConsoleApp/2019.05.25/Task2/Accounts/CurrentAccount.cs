@@ -13,7 +13,7 @@ namespace _2019._05._25
 
         }
 
-        public void AddToAccount(decimal sum)
+        public override void AddToAccount(decimal sum)
         {
             if (sum > 0)
             {
@@ -26,7 +26,7 @@ namespace _2019._05._25
             }
         }
 
-        public void SubtractFromAccount(decimal sum)
+        public override void SubtractFromAccount(decimal sum)
         {
             if (sum > 0)
             {

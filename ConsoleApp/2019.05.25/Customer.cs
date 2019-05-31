@@ -10,7 +10,7 @@ namespace _2019._05._25
     {
         public string Name { get; set; }
 
-        public List<Account> accounts;
+        public List<Account> accounts = new List<Account>();
 
         public Customer(string name)
         {
@@ -20,7 +20,7 @@ namespace _2019._05._25
             }
         }
 
-        public void CreateNewAccount(Customer customerName)
+        public void CreateNewAccount()
         {
             decimal interestRate = 0;
             decimal initialMoney = 0;
@@ -61,10 +61,18 @@ namespace _2019._05._25
         public void ShowAllAccounts()
         {
             int accountCounter = 0;
-            foreach (var item in this.accounts)
+
+            try
             {
-                accountCounter++;
-                Console.WriteLine(accountCounter + item.GetType().Name + item.Balance);
+                foreach (var item in this.accounts)
+                {
+                    accountCounter++;
+                    Console.WriteLine($"{accountCounter} {item.GetType().Name} {item.Balance}");
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("No accounts created yet"); ;
             }
         }
 
@@ -102,9 +110,28 @@ namespace _2019._05._25
             Console.WriteLine("Enter the deposit period (month)");
             if (int.TryParse(Console.ReadLine(), out int period))
             {
-                return period*30;
+                return period * 30;
             }
             else return 0;
+        }
+
+        public void FromAccountToAccount()
+        {
+            int indexOfAccountFrom = 0;
+            int indexOfAccountTo = 0;
+            decimal sum = 0;
+
+            this.ShowAllAccounts();
+            Console.WriteLine("Enter the account number to subtract money from");
+            indexOfAccountFrom = int.Parse(Console.ReadLine()) - 1;
+            Console.WriteLine("Enter the account number to add money to");
+            indexOfAccountTo = int.Parse(Console.ReadLine()) - 1;
+            Console.WriteLine("Enter the sum to transfer");
+            sum = decimal.Parse(Console.ReadLine());
+
+            accounts[indexOfAccountFrom].SubtractFromAccount(sum);
+            accounts[indexOfAccountTo].AddToAccount(sum);
+            this.ShowAllAccounts();
         }
     }
 }

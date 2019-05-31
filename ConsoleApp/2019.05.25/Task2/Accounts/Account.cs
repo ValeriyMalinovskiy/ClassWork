@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2019._05._25
 {
-    abstract class Account
+    abstract class Account : ITransactionable
     {
         protected decimal balance;
 
@@ -43,7 +43,7 @@ namespace _2019._05._25
         }
 
 
-        public decimal CloseAccount()
+        internal decimal CloseAccount()
         {
             {
                 Console.WriteLine($"You have received {this.balance} and closed {this.GetType().Name} account");
@@ -52,30 +52,30 @@ namespace _2019._05._25
             }
         }
 
-        //public void AddToAccount(decimal sum)
-        //{
-        //    if (sum>0)
-        //    {
-        //        this.Balance += sum;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Operation failed. Sum must be greater than zero. Press any key.");
-        //        Console.ReadKey();
-        //    }
-        //}
+        public virtual void AddToAccount(decimal sum)
+        {
+            if (sum > 0)
+            {
+                this.Balance += sum;
+            }
+            else
+            {
+                Console.WriteLine("Operation failed. Sum must be greater than zero. Press any key.");
+                Console.ReadKey();
+            }
+        }
 
-        //public void SubtractFromAccount(decimal sum)
-        //{
-        //    if (sum>0)
-        //    {
-        //        this.Balance -= sum;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Operation failed. Insufficient funds. Press any key.");
-        //        Console.ReadKey();
-        //    }
-        //}
+        public virtual void SubtractFromAccount(decimal sum)
+        {
+            if (sum > 0)
+            {
+                this.Balance -= sum;
+            }
+            else
+            {
+                Console.WriteLine("Operation failed. Insufficient funds. Press any key.");
+                Console.ReadKey();
+            }
+        }
     }
 }
