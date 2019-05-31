@@ -10,12 +10,12 @@ namespace _2019._05._25
     {
         protected decimal balance;
 
-        //protected string customerName;
+        protected string customerName;
 
         public Account(string customerName, decimal initialMoney)
         {
             this.Balance = initialMoney;
-            this.CustomerName = customerName;
+            this.customerName = customerName;
         }
 
         public decimal Balance
@@ -39,13 +39,6 @@ namespace _2019._05._25
             get
             {
                 return this.customerName;
-            }
-            protected set
-            {
-                if (!string.IsNullOrWhiteSpace(value))
-                {
-                    this.customerName = value;
-                }
             }
         }
 
