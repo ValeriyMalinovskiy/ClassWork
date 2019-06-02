@@ -4,9 +4,9 @@
     {
         static void Main(string[] args)
         {
-            //Task1();
+            Task1();
 
-            Task2();
+            //Task2();
 
         }
 
@@ -20,16 +20,16 @@
             var devices = new SmartDevice[]
             {cam1, cam2, speaker1, speaker2};
 
-            foreach (var item in devices)
-            {
-                //item.TurnOff();
-                item.TurnOn();
-            }
-            System.Console.WriteLine();
+            //foreach (var item in devices)
+            //{
+            //    //item.TurnOff();
+            //    item.TurnOn();
+            //}
+            //System.Console.WriteLine();
 
             foreach (var item in devices)
             {
-                System.Console.WriteLine(((SmartDevice)item).ToString());
+                System.Console.WriteLine(item);
             }
         }
 

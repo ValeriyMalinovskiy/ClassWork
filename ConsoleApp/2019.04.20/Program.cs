@@ -10,9 +10,9 @@ namespace _2019Apr20
     {
         static void Main(string[] args)
         {
-            //Task1.Calculator();
+            Task1.Calculator();
 
-            Task2.CurrencyExchange();
+            //Task2.CurrencyExchange();
 
             //Task3.BankLoanApp();
 

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Task1\DeviceState.cs" />
     <Compile Include="Task2\Accounts\Account.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="IInterestCalculatable.cs" />

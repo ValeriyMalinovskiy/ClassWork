@@ -52,15 +52,17 @@ namespace _2019Apr20
         }
         private static decimal Divide(decimal num1, decimal num2)
         {
-            try
-            {
-                return (decimal)num1 / num2;
-            }
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("Can't divide by zero");
-                return 0;
-            }
+            //try
+            //{
+            //    return (decimal)num1 / num2;
+            //}
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("Can't divide by zero");
+            //    return 0;
+            //}
+            return (decimal)num1 / num2;
+
         }
 
         private static void PrintResult(decimal res)

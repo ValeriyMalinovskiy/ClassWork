@@ -6,39 +6,50 @@ using System.Threading.Tasks;
 
 namespace _2019._05._25
 {
-    abstract class SmartDevice
+    internal class SmartDevice
     {
-        public abstract string BrandName { get; protected set; }
+        public string BrandName { get; protected set; }
 
-        public abstract bool IsDeviceOn { get; set; }
+        public DeviceState State { get; set; }
 
         public SmartDevice(string name)
         {
-            this.BrandName = name;
-            this.IsDeviceOn = false;
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(name))
+                {
+                    this.BrandName = name;
+                    this.State = DeviceState.Off;
+                }
+            }
+            catch (System.ArgumentNullException)
+            {
+
+                throw;
+            }
         }
 
         public void TurnOn()
         {
-            if (!this.IsDeviceOn)
+            if (this.State == DeviceState.Off)
             {
                 System.Console.WriteLine($"{this.BrandName} turned on");
-                this.IsDeviceOn = true;
+                this.State = DeviceState.On;
             }
         }
 
         public void TurnOff()
         {
-            if (this.IsDeviceOn)
+            if (this.State == DeviceState.On)
             {
                 System.Console.WriteLine($"{this.BrandName} turned off");
-                this.IsDeviceOn = false;
+                this.State = DeviceState.Off;
             }
         }
 
         public override string ToString()
         {
-            return (this.IsDeviceOn) ? $"{this.BrandName} is on" : $"{this.BrandName} is off";
+            return (this.State == DeviceState.On) ? $"{this.BrandName} is on" : $"{this.BrandName} is off";
         }
     }
 }
