@@ -46,8 +46,8 @@
     <Compile Include="Task1\DeviceState.cs" />
     <Compile Include="Task2\Accounts\Account.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="IInterestCalculatable.cs" />
-    <Compile Include="ITransactionable.cs" />
+    <Compile Include="Task2\Interface\IInterestCalculatable.cs" />
+    <Compile Include="Task2\Interface\ITransactionable.cs" />
     <Compile Include="Task1\ActionCamera.cs" />
     <Compile Include="Task1\IVoiceSwitchable.cs" />
     <Compile Include="Bank.cs" />

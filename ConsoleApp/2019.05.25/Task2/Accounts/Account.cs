@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace _2019._05._25
 {
-    abstract class Account : ITransactionable
+    internal abstract class Account : ITransactionable
     {
-        protected decimal balance;
+        private decimal balance;
 
-        protected string customerName;
+        private string customerName;
 
         public Account(string customerName, decimal initialMoney)
         {
@@ -33,7 +33,6 @@ namespace _2019._05._25
             }
         }
 
-
         public string CustomerName
         {
             get
@@ -42,8 +41,7 @@ namespace _2019._05._25
             }
         }
 
-
-        internal decimal CloseAccount()
+        public decimal CloseAccount()
         {
             {
                 Console.WriteLine($"You have received {this.balance} and closed {this.GetType().Name} account");

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace _2019._05._25
 {
-    interface IInterestCalculatable
+    public interface IInterestCalculatable
     {
-        decimal InterestMoneyCalculator(int daysPassed);
+        decimal CalculateInterestMoney(int daysPassed);
+
+        void SetInterestRate(decimal interestRate);
     }
 }
