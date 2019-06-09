@@ -11,9 +11,9 @@ namespace _2019._06._08
     {
         static void Main(string[] args)
         {
-            Task1();
+            //Task1();
 
-            //Task2();
+            Task2();
         }
 
         public static void Task1()
@@ -52,16 +52,10 @@ namespace _2019._06._08
 
         public static void Task2()
         {
-            string pathString = @"C:\Temp\userText.txt";
-            if (true)
-            {
-
-            }
-            if (Directory.Exists(@"C:\Temp\"))
-            {
-
-            };
-            File.Create(pathString);
+            string folderPath = @"C:\Temp";
+            string filePath = @"C:\Temp\userText.txt";
+            Directory.CreateDirectory(folderPath);
+            File.AppendAllText(filePath, Console.ReadLine());
         }
     }
 }
