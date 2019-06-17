@@ -24,7 +24,7 @@ namespace _2019._05._25
             }
             catch (System.ArgumentNullException)
             {
-
+                Console.WriteLine("Invalid name");
                 throw;
             }
         }

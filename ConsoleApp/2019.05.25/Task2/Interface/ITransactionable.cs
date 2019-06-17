@@ -8,8 +8,8 @@ namespace _2019._05._25
 {
     public interface ITransactionable
     {
-        void SubtractFromAccount(decimal sum);
+        void PutAmount(decimal sum);
 
-        void AddToAccount(decimal sum);
+        void TakeAmount(decimal sum);
     }
 }

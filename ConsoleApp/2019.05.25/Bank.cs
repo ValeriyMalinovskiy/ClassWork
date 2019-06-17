@@ -8,11 +8,6 @@ namespace _2019._05._25
 {
     class Bank
     {
-        public List<Customer> customers = new List<Customer>();
-
-        public void AddClientToDataBase(Customer customer)
-        {
-            customers.Add(customer);
-        }
+    
     }
 }
