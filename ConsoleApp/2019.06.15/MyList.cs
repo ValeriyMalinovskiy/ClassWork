@@ -10,11 +10,7 @@ namespace _2019._06._15
     {
         public int Count { get; private set; }
 
-        private T[] listItself;
-        public MyList()
-        {
-            listItself = new T[1];
-        }
+        private T[] listItself = new T[1];
 
         public void Add(T type)
         {

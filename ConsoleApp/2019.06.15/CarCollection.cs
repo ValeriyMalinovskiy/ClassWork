@@ -10,12 +10,7 @@ namespace _2019._06._15
     {
         public int Count { get; private set; }
 
-        private T[] collectionItself;
-
-        public CarCollection()
-        {
-            collectionItself = new T[1];
-        }
+        private T[] collectionItself = new T[1];
 
         public void Add(T type)
         {
