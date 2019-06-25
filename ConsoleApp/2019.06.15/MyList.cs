@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2019._06._15
 {
-    public class MyList<T>
+    public class MyList<T> : IMyList<T>
     {
         public int Count { get; private set; }
 
