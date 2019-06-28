@@ -10,24 +10,22 @@ namespace _2019._06._15
     {
         public int Count { get; private set; }
 
-        private T[] listItself;
+        private T previousElement;
 
-       
+        private T currentElement;
+
+        private T tempElement;
+
+        private T nextElement;
+
         public void Add(T type)
         {
-            T[] tempList = new T[Count + 1];
-            listItself.CopyTo(tempList, 0);
-            tempList[Count] = type;
-            listItself = tempList;
-            Count++;
-        }
-
-        public T this[int index]
-        {
-            get
+            while (previousElement!=null)
             {
-                return listItself[index];
+                previousElement = currentElement;
             }
         }
+
+
     }
 }
