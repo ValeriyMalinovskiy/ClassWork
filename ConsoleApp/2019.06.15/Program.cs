@@ -12,10 +12,12 @@ namespace _2019._06._15
         {
             //Task1();
 
-            Task2();
+            //Task2();
+
+            Task3();
         }
 
-         static void Task1()
+        static void Task1()
         {
             MyList<int> myList = new MyList<int>();
             myList.Add(5);
@@ -36,6 +38,15 @@ namespace _2019._06._15
             Console.WriteLine(carCollection["Lada Kalina"].Year);
             Console.WriteLine();
             Console.WriteLine(carCollection.ToString());
+        }
+
+        static void Task3()
+        {
+            MyLinkedList<string> myLinkedList = new MyLinkedList<string>();
+            myLinkedList.Add("A");
+            myLinkedList.Add("B");
+            myLinkedList.Add("C");
+            Console.WriteLine(myLinkedList.Count);
         }
     }
 }

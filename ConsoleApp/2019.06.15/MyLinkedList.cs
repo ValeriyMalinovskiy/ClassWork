@@ -10,22 +10,38 @@ namespace _2019._06._15
     {
         public int Count { get; private set; }
 
-        private T previousElement;
+        private T tValue;
 
-        private T currentElement;
+        private MyLinkedList<T> previousElement;
 
-        private T tempElement;
+        private MyLinkedList<T> headElement;
 
-        private T nextElement;
+        //private MyLinkedList<T> tempElement;
 
-        public void Add(T type)
+        public MyLinkedList()
         {
-            while (previousElement!=null)
+            this.previousElement = null;
+        }
+
+        private MyLinkedList(MyLinkedList<T> prev, T tValue)
+        {
+            try
             {
-                previousElement = currentElement;
+                this.previousElement = prev;
+                prev.tValue = tValue;
+            }
+            catch (Exception)
+            {
             }
         }
 
-
+        public void Add(T type)
+        {
+            MyLinkedList<T> newElement = new MyLinkedList<T>(previousElement, tValue);
+            this.tValue = type;
+            previousElement = newElement;
+            this.headElement = newElement;
+            this.Count++;
+        }
     }
 }
