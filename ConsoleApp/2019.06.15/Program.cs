@@ -44,9 +44,12 @@ namespace _2019._06._15
         {
             MyLinkedList<string> myLinkedList = new MyLinkedList<string>();
             myLinkedList.Add("A");
-            myLinkedList.Add("B");
-            myLinkedList.Add("C");
-            Console.WriteLine(myLinkedList.Count);
+            //myLinkedList.Add("B");
+            //myLinkedList.Add("C");
+            //myLinkedList.Add("D");
+            //myLinkedList.Add("E");
+            myLinkedList.Add("F");
+            Console.WriteLine(myLinkedList.ToString());
         }
     }
 }

@@ -14,9 +14,13 @@ namespace _2019._06._15
 
         private MyLinkedList<T> previousElement;
 
-        private MyLinkedList<T> headElement;
-
-        //private MyLinkedList<T> tempElement;
+        public MyLinkedList<T> PreviousElement
+        {
+            get
+            {
+                return this.previousElement;
+            }
+        }
 
         public MyLinkedList()
         {
@@ -25,23 +29,36 @@ namespace _2019._06._15
 
         private MyLinkedList(MyLinkedList<T> prev, T tValue)
         {
-            try
-            {
                 this.previousElement = prev;
                 prev.tValue = tValue;
-            }
-            catch (Exception)
-            {
-            }
         }
 
         public void Add(T type)
         {
-            MyLinkedList<T> newElement = new MyLinkedList<T>(previousElement, tValue);
+            if (this.Count>2)
+            {
+                MyLinkedList<T> newElement = new MyLinkedList<T>(previousElement, tValue);
+                this.previousElement = newElement;
+            }
             this.tValue = type;
-            previousElement = newElement;
-            this.headElement = newElement;
             this.Count++;
+        }
+
+        private void GetValues(MyLinkedList<T> myLinkedList, StringBuilder sb)
+        {
+            sb.Append(this.tValue + " -> ");
+            if (myLinkedList.previousElement != null)
+            {
+                var temp = PreviousElement;
+                temp.GetValues(temp, sb);
+            }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            GetValues(this.previousElement, sb);
+            return sb.ToString();
         }
     }
 }
