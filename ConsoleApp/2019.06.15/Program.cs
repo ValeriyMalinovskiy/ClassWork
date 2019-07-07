@@ -46,8 +46,10 @@ namespace _2019._06._15
             myLinkedList.Add("A");
             myLinkedList.Add("B");
             myLinkedList.Add("C");
+            myLinkedList.Delete();
             myLinkedList.Add("D");
             myLinkedList.Add("E");
+            myLinkedList.Delete();
             myLinkedList.Add("F");
             Console.WriteLine(myLinkedList.ToString());
             Console.WriteLine(myLinkedList.Count);

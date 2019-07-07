@@ -14,46 +14,40 @@ namespace _2019._06._15
 
         private MyLinkedList<T> previousElement;
 
-        public MyLinkedList<T> PreviousElement
-        {
-            get
-            {
-                return this.previousElement;
-            }
-        }
-
         public MyLinkedList()
         {
             this.previousElement = null;
         }
 
-        private MyLinkedList(MyLinkedList<T> prev, T tValue)
+        private MyLinkedList(MyLinkedList<T> prev, T tValue, int count)
         {
-            if (tValue != null)
-            {
-                this.previousElement = prev;
-                prev.tValue = tValue;
-            }
+            this.previousElement = prev;
+            this.tValue = tValue;
+            this.Count = count;
         }
 
         public void Add(T type)
         {
-            MyLinkedList<T> newElement = new MyLinkedList<T>(previousElement, tValue);
+            MyLinkedList<T> newElement = new MyLinkedList<T>(this.previousElement, this.tValue, this.Count);
             this.tValue = type;
             this.previousElement = newElement;
             this.Count++;
         }
 
+        public void Delete()
+        {
+            this.tValue = this.previousElement.tValue;
+            this.Count = this.previousElement.Count;
+            this.previousElement = this.previousElement.previousElement;
+        }
+
         private void GetValues(MyLinkedList<T> myLinkedList, StringBuilder sb)
         {
             sb.Append(this.tValue);
-            if (myLinkedList.previousElement != null)
+            if (myLinkedList.Count>1)
             {
-                if (this.tValue != null)
-                {
-                    sb.Append(" -> ");
-                }
-                var temp = PreviousElement;
+                sb.Append(" -> ");
+                var temp = previousElement;
                 temp.GetValues(temp, sb);
             }
         }
