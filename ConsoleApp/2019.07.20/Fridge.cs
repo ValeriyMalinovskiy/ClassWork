@@ -1,81 +1,71 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2019._07._20
+﻿namespace _2019._07._20
 {
-    class Fridge
+    internal class Fridge
     {
+        private DoorState MainDoorState { get; set; }
 
-        public StateEnum FridgeState { get; private set; }
+        private DoorState FreezerDoorState { get; set; }
 
-        public MainDoorEnum MainDoorState { get; private set; }
-
-        public FreezerEnum FreezerState { get; private set; }
+        private FridgeState FridgeState { get; set; }
 
         public Fridge()
         {
-            this.FridgeState = StateEnum.On;
-            this.MainDoorState = MainDoorEnum.MainDoorClosed;
-            this.FreezerState = FreezerEnum.FreezerClosed;
+            this.FridgeState = FridgeState.On;
+            this.MainDoorState = DoorState.Closed;
+            this.FreezerDoorState = DoorState.Closed;
         }
 
-        public delegate void FridgeStateChangedDelegate((StateEnum, MainDoorEnum, FreezerEnum) state, EventArgs eventArgs);
-        public event FridgeStateChangedDelegate FridgeEvent;
-        private void OnFridgeInvoke((StateEnum, MainDoorEnum, FreezerEnum) state, EventArgs e)
+        public delegate void FridgeDelegate(FridgeEventArgs args);
+
+        public event FridgeDelegate FridgeInteraction;
+
+        private void OnFridgeInteraction()
         {
-            this.FridgeEvent?.Invoke(state, e);
+            this.FridgeInteraction?.Invoke(new FridgeEventArgs(this.MainDoorState, this.FreezerDoorState, this.FridgeState));
         }
 
         public virtual void ChangeMainDoorState()
         {
-            if (this.MainDoorState == MainDoorEnum.MainDoorClosed)
+            if (this.MainDoorState == DoorState.Closed)
             {
-                this.MainDoorState = MainDoorEnum.MainDoorOpened;
+                this.MainDoorState = DoorState.Open;
             }
             else
             {
-                this.MainDoorState = MainDoorEnum.MainDoorClosed;
+                this.MainDoorState = DoorState.Closed;
             }
-            this.OnFridgeInvoke((this.FridgeState, this.MainDoorState, this.FreezerState), new EventArgs());
+            this.OnFridgeInteraction();
         }
 
-        public virtual void ChangeFreezerState()
+        public virtual void ChangeFreezerDoorState()
         {
-            if (this.FreezerState == FreezerEnum.FreezerClosed)
+            if (this.FreezerDoorState == DoorState.Closed)
             {
-                this.FreezerState = FreezerEnum.FreezerOpened;
+                this.FreezerDoorState = DoorState.Open;
             }
             else
             {
-                this.FreezerState = FreezerEnum.FreezerClosed;
+                this.FreezerDoorState = DoorState.Closed;
             }
-            this.OnFridgeInvoke((this.FridgeState, this.MainDoorState, this.FreezerState), new EventArgs());
+            this.OnFridgeInteraction();
         }
 
         public virtual void ChangeFridgeState()
         {
-            if (this.FridgeState == StateEnum.Off)
+            if (this.FridgeState == FridgeState.Off)
             {
-                this.FridgeState = StateEnum.On;
+                this.FridgeState = FridgeState.On;
             }
             else
             {
-                this.FridgeState = StateEnum.Off;
+                this.FridgeState = FridgeState.Off;
             }
-            this.OnFridgeInvoke((this.FridgeState, this.MainDoorState, this.FreezerState), new EventArgs());
+            this.OnFridgeInteraction();
         }
 
-        public string ShowState()
+        public string GetState()
         {
-            return this.ToString();
-        }
-
-        public override string ToString()
-        {
-            return $"The fridge is {this.FridgeState}, {this.MainDoorState}, {this.FreezerState}";
+            return $"The fridge is {this.FridgeState}, the main door is {this.MainDoorState}, the freezer door is {this.FreezerDoorState}";
         }
     }
 }

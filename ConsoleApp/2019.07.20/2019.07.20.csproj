@@ -46,13 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\MainDoorEnum.cs" />
-    <Compile Include="Enums\FreezerEnum.cs" />
+    <Compile Include="Enums\DoorState.cs" />
     <Compile Include="Fridge.cs" />
-    <Compile Include="FridgeEventManager.cs" />
+    <Compile Include="FridgeOwner.cs" />
+    <Compile Include="FridgeEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Enums\StateEnum.cs" />
+    <Compile Include="Enums\FridgeState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

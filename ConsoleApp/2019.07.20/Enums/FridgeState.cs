@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2019._07._20
 {
-    internal enum StateEnum
+    public enum FridgeState
     {
         On,
         Off
