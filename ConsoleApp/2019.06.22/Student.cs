@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _2019._06._22
 {
-    class Student
+    internal class Student
     {
         public string FirstName { get; set; }
 
@@ -40,15 +38,15 @@ namespace _2019._06._22
 
         public void GetTask()
         {
-            ToDoList.Enqueue(new Task());
+            this.ToDoList.Enqueue(new Task());
         }
 
         public void CompleteTask()
         {
-            if (ToDoList.Count>0)
+            if (this.ToDoList.Any())
             {
-                Console.WriteLine(ToDoList.Peek().CompleteTask());
-                ToDoList.Dequeue();
+                Console.WriteLine(this.ToDoList.Peek().CompleteTask());
+                this.ToDoList.Dequeue();
             }
             else
             {
@@ -58,16 +56,16 @@ namespace _2019._06._22
 
         public void BorrowBook(int number)
         {
-            BooksBorrowed.Push(new Book(number));
-            Console.WriteLine($"{BooksBorrowed.Peek().Name} was borrowed");
+            this.BooksBorrowed.Push(new Book(number));
+            Console.WriteLine($"{this.BooksBorrowed.Peek().Name} was borrowed");
         }
 
         public void ReturnBook()
         {
-            if (BooksBorrowed.Count>0)
+            if (this.BooksBorrowed.Any())
             {
-                Console.WriteLine($"{BooksBorrowed.Peek().Name} was returned");
-                BooksBorrowed.Pop();
+                Console.WriteLine($"{this.BooksBorrowed.Peek().Name} was returned");
+                this.BooksBorrowed.Pop();
             }
             else
             {

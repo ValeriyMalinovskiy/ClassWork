@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace _2019._06._22
 {
     class StudentDB
     {
-        public Dictionary<string, List<Student>> Students{ get; set; }
+        public Dictionary<string, List<Student>> Students { get; set; }
 
         public StudentDB()
         {
