@@ -10,44 +10,49 @@ namespace _2019._06._22
     {
         public static void Main(string[] args)
         {
-            List<Student> students = new List<Student>()
-            {
-                new Student("Vasya", "Pupkin", 2, "A1", "MBA"),
-                new Student("Ira", "Zayats", 1, "F2", "IT")
-            };
-
-            foreach (var item in FindStudent("Vasya", "Pupkin", students))
+            StudentDB studentDB = new StudentDB();
+            studentDB.AddStudent(new Student("Vasya", "Pupkin", 2, "A1", "MBA"));
+            studentDB.AddStudent(new Student("Ira", "Zayats", 1, "F2", "IT"));
+            studentDB.AddStudent(new Student("Vasya", "Pupkin", 2, "F3", "IT")); 
+            
+            //
+            //Search by name check.
+            //
+            foreach (var item in studentDB.FindStudent("Vasya", "Pupkin"))
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine();
 
-            students[0].GetTask();
-            students[0].GetTask();
-            students[0].CompleteTask();
-            students[0].GetTask();
-            students[0].CompleteTask();
-            students[0].GetTask();
-            students[0].GetTask();
-            students[0].CompleteTask();
-            students[0].GetTask();
-            students[0].CompleteTask();
-            students[0].CompleteTask();
-            students[0].CompleteTask();
-            students[0].CompleteTask();
+            //
+            //Queue check
+            //
+            Student tempstudent = new Student("Petya", "Pupkin", 2, "V2", "IT");
+            tempstudent.GetTask();
+            tempstudent.GetTask();
+            tempstudent.CompleteTask();
+            tempstudent.GetTask();
+            tempstudent.CompleteTask();
+            tempstudent.GetTask();
+            tempstudent.GetTask();
+            tempstudent.CompleteTask();
+            tempstudent.GetTask();
+            tempstudent.CompleteTask();
+            tempstudent.CompleteTask();
+            tempstudent.CompleteTask();
+            tempstudent.CompleteTask();
+            Console.WriteLine();
 
-            students[1].BorrowBook(1);
-            students[1].BorrowBook(2);
-            students[1].BorrowBook(3);
-            students[1].ReturnBook();
-            students[1].ReturnBook();
-            students[1].ReturnBook();
-            students[1].ReturnBook();
+            //
+            //Stack check
+            //
+            tempstudent.BorrowBook(1);
+            tempstudent.BorrowBook(2);
+            tempstudent.BorrowBook(3);
+            tempstudent.ReturnBook();
+            tempstudent.ReturnBook();
+            tempstudent.ReturnBook();
+            tempstudent.ReturnBook();
         }
-
-        public static IEnumerable<Student> FindStudent(string firstName, string lastName, IEnumerable<Student> students)
-        {
-            return students.Where(student => student.FirstName == firstName && student.LastName == lastName);
-        }
-
     }
 }

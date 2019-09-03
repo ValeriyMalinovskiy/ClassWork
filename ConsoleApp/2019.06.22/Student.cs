@@ -35,7 +35,7 @@ namespace _2019._06._22
 
         public override string ToString()
         {
-            return this.FirstName + " " + this.LastName;
+            return this.FirstName + " " + this.LastName + " " + this.Group;
         }
 
         public void GetTask()
