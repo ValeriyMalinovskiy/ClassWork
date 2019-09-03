@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _2019._06._22
 {
-    class Task
+    internal class Task
     {
         public string CreationDate { get; private set; }
 

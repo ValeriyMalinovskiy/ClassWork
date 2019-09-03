@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _2019._06._22
 {
-    class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {
             StudentDB studentDB = new StudentDB();
             studentDB.AddStudent(new Student("Vasya", "Pupkin", 2, "A1", "MBA"));
             studentDB.AddStudent(new Student("Ira", "Zayats", 1, "F2", "IT"));
-            studentDB.AddStudent(new Student("Vasya", "Pupkin", 2, "F3", "IT")); 
-            
+            studentDB.AddStudent(new Student("Vasya", "Pupkin", 2, "F3", "IT"));
+
             //
             //Search by name check.
             //

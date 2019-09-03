@@ -2,7 +2,7 @@
 
 namespace _2019._06._22
 {
-    class StudentDB
+    internal class StudentDB
     {
         public Dictionary<string, List<Student>> Students { get; set; }
 
