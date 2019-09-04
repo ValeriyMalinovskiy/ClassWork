@@ -11,10 +11,35 @@ namespace _2019._06._22
             studentDB.AddStudent(new Student("Ira", "Zayats", 1, "F2", "IT"));
             studentDB.AddStudent(new Student("Vasya", "Pupkin", 2, "F3", "IT"));
 
+            Console.WriteLine("Number of studets: " + studentDB.GetStudentsNumber());
+
             //
             //Search by name check.
             //
             foreach (var item in studentDB.FindStudent("Vasya", "Pupkin"))
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+
+            //
+            //Check delete from db
+            //
+            if (studentDB.DeleteStudent(studentDB.FindStudent("Vasya", "Pupkin")[0]))
+            {
+                Console.WriteLine("Deleted successfully");
+                Console.WriteLine("Number of studets: " + studentDB.GetStudentsNumber());
+            }
+            else
+            {
+                Console.WriteLine("Such student does not exist");
+            }
+            Console.WriteLine();
+
+            //
+            //Get all students check.
+            //
+            foreach (var item in studentDB.GetStudents())
             {
                 Console.WriteLine(item);
             }
