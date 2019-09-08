@@ -28,19 +28,26 @@ namespace _2019._06._28
             new Employee("Job","Less", 20, 'F', null)
             };
 
-            IEnumerable<Employee> tempCollection;
+            //IEnumerable<Employee> tempCollection;
             //tempCollection = employees.OrderBy(e => e.FirstName).ThenBy(e => e.LastName);
             //tempCollection = employees.Select(e => e).Where(a => a.Age > 30);
             //tempCollection = employees.Select(e => e).Where(e => e.Gender == 'F');
             //tempCollection = employees.Select(e => e).Where(e => e.Gender == 'M');
             //string[] tempCollection = employees.Select(e => e.FirstName + e.LastName).ToArray();
-            //tempCollection = employees.Select(e => e).Where(e => e.FirstName[0] == 'O' && e.Age > 25);
-            tempCollection = employees.SelectMany(e => e).Where(e => e.FirstName.en);
+            //string[] tempCollection = employees.Where(e => e. FirstName[0] == 'O' && e.Age > 25 && e.Gender == 'F').Select(e => e.LastName).ToArray();
+            //tempCollection = employees.SelectMany(e => e).Where(e => e.FirstName.en);
 
+            ShowStaffNumberPerCompany(employees);
+        }
+
+        public static void ShowStaffNumberPerCompany(Employee[] employees)
+        {
+            var tempCollection = employees.Select(e => e.Company).Distinct();
             foreach (var item in tempCollection)
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"{item} {employees.Count(e => e.Company == item)}");
             }
+
         }
     }
 }
