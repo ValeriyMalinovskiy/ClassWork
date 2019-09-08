@@ -8,136 +8,38 @@ namespace _2019._06._28
 {
     class Program
     {
-        //    public delegate void MyDelegate();
-
-        //    public static void Method1()
-        //    {
-        //        Console.WriteLine("Method1");
-        //    }
-
-        //    public static void Method2()
-        //    {
-        //        Console.WriteLine("Method2");
-        //    }
-
-        //    public static void Method3()
-        //    {
-        //        Console.WriteLine("Method3");
-        //    }
-
-        //    static void Main()
-        //    {
-        //        MyDelegate myDelegate = null;
-        //        MyDelegate myDelegate1 = new MyDelegate(Method1);
-        //        MyDelegate myDelegate2 = new MyDelegate(Method2);
-        //        MyDelegate myDelegate3 = new MyDelegate(Method3);
-
-        //        myDelegate = myDelegate1 + myDelegate2 + myDelegate3;
-
-        //        Console.WriteLine("Введите число от 1 до 7");
-        //        string choice = Console.ReadLine();
-
-        //        switch (choice)
-        //        {
-        //            case "1":
-        //                {
-        //                    myDelegate1.Invoke();
-        //                    break;
-        //                }
-        //            case "2":
-        //                {
-        //                    myDelegate2.Invoke();
-        //                    break;
-        //                }
-        //            case "3":
-        //                {
-        //                    myDelegate3.Invoke();
-        //                    break;
-        //                }
-        //            case "4":
-        //                {
-        //                    MyDelegate myDelegate4 = myDelegate - myDelegate1;
-        //                    myDelegate4.Invoke();
-        //                    break;
-        //                }
-        //            case "5":
-        //                {
-        //                    MyDelegate myDelegate5 = myDelegate - myDelegate2;
-        //                    myDelegate5.Invoke();
-        //                    break;
-        //                }
-        //            case "6":
-        //                {
-        //                    MyDelegate myDelegate6 = myDelegate - myDelegate3;
-        //                    myDelegate6.Invoke();
-        //                    break;
-        //                }
-        //            case "7":
-        //                {
-        //                    myDelegate.Invoke();
-        //                    break;
-        //                }
-        //            default:
-        //                {
-        //                    Console.WriteLine("Вы ввели недопустимое значение.");
-        //                    break;
-        //                }
-        //        }
-        //        Console.ReadKey();
-        //    }
-        //}
-
-        static void Main(string[] args)
+        static void Main()
         {
-            Helper helper = new Helper();
-            var calculator = new Calculator();
-
-            helper.Execute(calculator.Divide);
-            helper.Execute(calculator.Add);
-            helper.Execute(calculator.Subtract);
-            helper.Execute(calculator.Multiply);
+            Task1();
         }
 
-        public class Helper
+        private static void Task1()
         {
-            public void Execute(Func<double, double, double> funk)
-            {
-                double firstArgument = 10;
-                double secondArgument = 20;
+            Employee[] employees = {
+            new Employee("Vasya","Pupkin",26,'M',"Oracle"),
+            new Employee("Anton","Isaev",28,'M',"Intetics"),
+            new Employee("Oleg","Employee",36,'M',"Acompany"),
+            new Employee("Valeriy","Belich",29,'M',"Intetics"),
+            new Employee("Performer","Top", 24,'F', "Apple"),
+            new Employee("Performer","Low", 26,'M', "ATB"),
+            new Employee("Olga","Pavlenko", 30, 'F', "AVK"),
+            new Employee("Evgeniya","Gladisheva", 32, 'F', "Intetics"),
+            new Employee("Self","Employed", 40, 'M', null),
+            new Employee("Job","Less", 20, 'F', null)
+            };
 
-                var calculationResult = funk.Invoke(firstArgument, secondArgument);
+            IEnumerable<Employee> tempCollection;
+            //tempCollection = employees.OrderBy(e => e.FirstName).ThenBy(e => e.LastName);
+            //tempCollection = employees.Select(e => e).Where(a => a.Age > 30);
+            //tempCollection = employees.Select(e => e).Where(e => e.Gender == 'F');
+            //tempCollection = employees.Select(e => e).Where(e => e.Gender == 'M');
+            //string[] tempCollection = employees.Select(e => e.FirstName + e.LastName).ToArray();
+            //tempCollection = employees.Select(e => e).Where(e => e.FirstName[0] == 'O' && e.Age > 25);
+            tempCollection = employees.SelectMany(e => e).Where(e => e.FirstName.en);
 
-                Console.WriteLine(calculationResult);
-            }
-        }
-
-        //public delegate double CalculateDelegate(double firstValue, double secondValue);
-
-        class Calculator
-        {
-            public double Add(double firstValue, double secondValue)
+            foreach (var item in tempCollection)
             {
-                return (firstValue + secondValue);
-            }
-            public double Subtract(double firstValue, double secondValue)
-            {
-                return (firstValue - secondValue);
-            }
-            public double Multiply(double firstValue, double secondValue)
-            {
-                return (firstValue * secondValue);
-            }
-            public double Divide(double firstValue, double secondValue)
-            {
-                try
-                {
-                    return firstValue / secondValue;
-                }
-                catch (DivideByZeroException)
-                {
-                    Console.WriteLine("can't divide by zero");
-                }
-                return 0;
+                Console.WriteLine(item);
             }
         }
     }
