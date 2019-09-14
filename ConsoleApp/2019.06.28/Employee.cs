@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace _2019._06._28
 {
-    class Employee : IEquatable<Employee> 
+    internal class Employee : IEquatable<Employee> 
     {
-        public string FirstName { get; set; }
+        internal string FirstName { get; set; }
 
-        public string LastName { get; set; }
+        internal string LastName { get; set; }
 
-        public int Age { get; set; }
+        internal int Age { get; set; }
 
-        public char Gender { get; set; }
+        internal char Gender { get; set; }
 
-        public string Company { get; set; }
+        internal string Company { get; set; }
 
-        public Employee(string firstName, string lastName, int age, char gender, string company)
+        internal Employee(string firstName, string lastName, int age, char gender, string company)
         {
             this.FirstName = firstName;
             this.LastName = lastName;

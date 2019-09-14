@@ -8,12 +8,12 @@ namespace _2019._06._28
 {
     class Program
     {
-        static void Main()
+        private static void Main()
         {
-            Task1();
+            Task1and2();
         }
 
-        private static void Task1()
+        private static void Task1and2()
         {
             Employee[] employees = {
             new Employee("Vasya","Pupkin",24,'M',"Oracle"),
@@ -35,28 +35,24 @@ namespace _2019._06._28
             new Employee("Valeriy","Belich",29,'M',"Intetics"),
             };
 
-            //string[] tempCollection = employees.Select(e => e.FirstName + e.LastName).ToArray();
-            //string[] tempCollection = employees.Where(e => e. FirstName[0] == 'O' && e.Age > 25 && e.Gender == 'F').Select(e => e.LastName).ToArray();
-            //tempCollection = employees.SelectMany(e => e).Where(e => e.FirstName.en);
-
-            //ShowAToZ(employees);
-            //ShowOlderThan30(employees);
-            //ShowFemalesOnly(employees);
-            //ShowMalesOnly(employees);
-            //ShowFirstNameAndLastName(employees);
-            //ShowFemaleLastNameStartingWithOOlderThan20(employees);
-            //ShowStaffNumberPerCompany(employees);
-            //ShowFirstEmployee(employees);
-            //ShowLastEmployee(employees);
-            //ShowFirstEmployeeOlderThan25(employees);
-            //OlegGoBackToSchool(employees, 3);
-            //PrintResult(JoinTwoCollections(employees, employees2));
-            //PrintResult(JoinTwoCollectionsNoDuplicates(employees, employees2));
-            //PrintResult(JoinTwoCollectionsDuplicates(employees, employees2));
+            ShowAToZ(employees);
+            ShowOlderThan30(employees);
+            ShowFemalesOnly(employees);
+            ShowMalesOnly(employees);
+            ShowFirstNameAndLastName(employees);
+            ShowFemaleLastNameStartingWithOOlderThan20(employees);
+            ShowStaffNumberPerCompany(employees);
+            ShowFirstEmployee(employees);
+            ShowLastEmployee(employees);
+            ShowFirstEmployeeOlderThan25(employees);
+            OlegGoBackToSchool(employees, 3);
+            PrintResult(JoinTwoCollections(employees, employees2));
+            PrintResult(JoinTwoCollectionsNoDuplicates(employees, employees2));
+            PrintResult(JoinTwoCollectionsDuplicates(employees, employees2));
             PrintResult(ConvertTwoCollectionsToListAndAddEmployee(employees, employees2, new Employee("Shawn", "Green", 50, 'M', "Intel")));
         }
 
-        public static void ShowAToZ(IEnumerable<Employee> employees)
+        private static void ShowAToZ(IEnumerable<Employee> employees)
         {
             foreach (var item in employees.OrderBy(e => e.FirstName).ThenBy(e => e.LastName))
             {
@@ -64,7 +60,7 @@ namespace _2019._06._28
             }
         }
 
-        public static void ShowOlderThan30(IEnumerable<Employee> employees)
+        private static void ShowOlderThan30(IEnumerable<Employee> employees)
         {
             foreach (var item in employees.Select(e => e).Where(a => a.Age > 30))
             {
@@ -72,7 +68,7 @@ namespace _2019._06._28
             }
         }
 
-        public static void ShowFemalesOnly(IEnumerable<Employee> employees)
+        private static void ShowFemalesOnly(IEnumerable<Employee> employees)
         {
             foreach (var item in employees.Select(e => e).Where(e => e.Gender == 'F'))
             {
@@ -80,7 +76,7 @@ namespace _2019._06._28
             }
         }
 
-        public static void ShowMalesOnly(IEnumerable<Employee> employees)
+        private static void ShowMalesOnly(IEnumerable<Employee> employees)
         {
             foreach (var item in employees.Select(e => e).Where(e => e.Gender == 'M'))
             {
@@ -88,7 +84,7 @@ namespace _2019._06._28
             }
         }
 
-        public static void ShowFirstNameAndLastName(IEnumerable<Employee> employees)
+        private static void ShowFirstNameAndLastName(IEnumerable<Employee> employees)
         {
             foreach (var item in employees.Select(e => e.FirstName + " " + e.LastName))
             {
@@ -96,7 +92,7 @@ namespace _2019._06._28
             }
         }
 
-        public static void ShowFemaleLastNameStartingWithOOlderThan20(IEnumerable<Employee> employees)
+        private static void ShowFemaleLastNameStartingWithOOlderThan20(IEnumerable<Employee> employees)
         {
             foreach (var item in employees.Where(e => e.FirstName[0] == 'O' && e.Age > 25 && e.Gender == 'F').Select(e => e.LastName))
             {
@@ -104,7 +100,7 @@ namespace _2019._06._28
             }
         }
 
-        public static void ShowStaffNumberPerCompany(Employee[] employees)
+        private static void ShowStaffNumberPerCompany(Employee[] employees)
         {
             var tempCollection = employees.Select(e => e.Company).Distinct();
             foreach (var item in tempCollection)
@@ -113,47 +109,47 @@ namespace _2019._06._28
             }
         }
 
-        public static void ShowFirstEmployee(IEnumerable<Employee> employees)
+        private static void ShowFirstEmployee(IEnumerable<Employee> employees)
         {
             Console.WriteLine(employees.First<Employee>());
         }
 
-        public static void ShowLastEmployee(IEnumerable<Employee> employees)
+        private static void ShowLastEmployee(IEnumerable<Employee> employees)
         {
             Console.WriteLine(employees.Last<Employee>());
         }
 
-        public static void ShowFirstEmployeeOlderThan25(IEnumerable<Employee> employees)
+        private static void ShowFirstEmployeeOlderThan25(IEnumerable<Employee> employees)
         {
             Console.WriteLine(employees.First(e => e.Age > 25));
         }
 
-        public static void OlegGoBackToSchool(IEnumerable<Employee> employees, int school)
+        private static void OlegGoBackToSchool(IEnumerable<Employee> employees, int school)
         {
             Pupil exEmployee  = new Pupil(employees.First(e => e.FirstName == "Oleg").FirstName, employees.First(e => e.FirstName == "Oleg").LastName, school);
         }
 
-        public static IEnumerable<Employee> JoinTwoCollections(IEnumerable<Employee> employees, IEnumerable<Employee> employees2)
+        private static IEnumerable<Employee> JoinTwoCollections(IEnumerable<Employee> employees, IEnumerable<Employee> employees2)
         {
             return employees.Concat(employees2);
         }
 
-        public static IEnumerable<Employee> JoinTwoCollectionsNoDuplicates(IEnumerable<Employee> employees, IEnumerable<Employee> employees2)
+        private static IEnumerable<Employee> JoinTwoCollectionsNoDuplicates(IEnumerable<Employee> employees, IEnumerable<Employee> employees2)
         {
             return employees.Concat(employees2).Distinct();
         }
 
-        public static IEnumerable<Employee> JoinTwoCollectionsDuplicates(IEnumerable<Employee> employees, IEnumerable<Employee> employees2)
+        private static IEnumerable<Employee> JoinTwoCollectionsDuplicates(IEnumerable<Employee> employees, IEnumerable<Employee> employees2)
         {
             return employees.Intersect(employees2);
         }
 
-        public static List<Employee> ConvertTwoCollectionsToListAndAddEmployee(IEnumerable<Employee> employees, IEnumerable<Employee> employees2, Employee employee)
+        private static List<Employee> ConvertTwoCollectionsToListAndAddEmployee(IEnumerable<Employee> employees, IEnumerable<Employee> employees2, Employee employee)
         {
             return employees.Concat(employees2).Distinct().Append(employee).ToList();
         }
 
-        public static void PrintResult(IEnumerable<Employee> employees)
+        private static void PrintResult(IEnumerable<Employee> employees)
         {
             foreach (var item in employees)
             {
