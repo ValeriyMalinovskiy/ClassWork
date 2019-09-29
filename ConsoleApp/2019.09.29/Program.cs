@@ -10,6 +10,8 @@ namespace _2019._09._29
     {
         static void Main(string[] args)
         {
+            Year year = new Year(2000);
+            Console.WriteLine(year.GetNumberOfDays());
         }
     }
 }
